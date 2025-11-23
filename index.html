@@ -26,6 +26,21 @@
     </div>
   </nav>
 
+  <!-- Section Progress Indicator -->
+  <div class="section-indicator">
+    <a href="#about" class="section-indicator-dot" data-section="about" data-section-name="About"></a>
+    <a href="#internship" class="section-indicator-dot" data-section="internship" data-section-name="Internship"></a>
+    <a href="#projects" class="section-indicator-dot" data-section="projects" data-section-name="Projects"></a>
+    <a href="#extracurriculars" class="section-indicator-dot" data-section="extracurriculars" data-section-name="Extracurriculars"></a>
+    <a href="#skills" class="section-indicator-dot" data-section="skills" data-section-name="Skills"></a>
+    <a href="#contact" class="section-indicator-dot" data-section="contact" data-section-name="Contact"></a>
+  </div>
+
+  <!-- Page Loader -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader"></div>
+  </div>
+
   <header>
     <div class="bubble-bg"></div>
 
@@ -42,8 +57,10 @@
   </header>
 
   <section id="about">
-    <div class="section-title">About Me</div>
-    <div class="section-desc">A holistic approach to technology, community, and personal growth.</div>
+    <div class="section-header">
+      <div class="section-title">About Me</div>
+      <div class="section-desc">A holistic approach to technology, community, and personal growth.</div>
+    </div>
 
     <!-- Image Carousel -->
     <div class="carousel-container">
@@ -53,6 +70,8 @@
           <div class="carousel-slide"><img src="images/about/1.jpg" alt="About me image 1" onerror="this.style.display='none'" /></div>
           <div class="carousel-slide"><img src="images/about/2.jpg" alt="About me image 2" onerror="this.style.display='none'" /></div>
           <div class="carousel-slide"><img src="images/about/3.jpg" alt="About me image 3" onerror="this.style.display='none'" /></div>
+          <div class="carousel-slide"><img src="images/about/4.jpg" alt="About me image 4" onerror="this.style.display='none'" /></div>
+          <div class="carousel-slide"><img src="images/about/5.jpg" alt="About me image 5" onerror="this.style.display='none'" /></div>
         </div>
         <button class="carousel-btn carousel-btn-next" aria-label="Next image">›</button>
       </div>
@@ -78,8 +97,10 @@
   </section>
 
   <section id="internship">
-    <div class="section-title">Internship Experience</div>
-    <div class="section-desc">Technical Development Intern at Absolute Kinetics Consultancy (AKC)</div>
+    <div class="section-header">
+      <div class="section-title">Internship Experience</div>
+      <div class="section-desc">Technical Development Intern at Absolute Kinetics Consultancy (AKC)</div>
+    </div>
 
     <!-- Image Carousel -->
     <div class="carousel-container">
@@ -123,8 +144,10 @@
   </section>
 
   <section id="projects">
-    <div class="section-title">Projects</div>
-    <div class="section-desc">Academic and internship projects showcasing technical skills and problem-solving abilities.</div>
+    <div class="section-header">
+      <div class="section-title">Projects</div>
+      <div class="section-desc">Academic and internship projects showcasing technical skills and problem-solving abilities.</div>
+    </div>
 
     <!-- Clickable Projects Carousel -->
     <div class="carousel-container">
@@ -207,8 +230,10 @@
   </section>
 
   <section id="extracurriculars">
-    <div class="section-title">Extracurricular Activities</div>
-    <div class="section-desc">Beyond academics: community service, sports, and campus involvement.</div>
+    <div class="section-header">
+      <div class="section-title">Extracurricular Activities</div>
+      <div class="section-desc">Beyond academics: community service, sports, and campus involvement.</div>
+    </div>
 
     <!-- Image Carousel -->
     <div class="carousel-container">
@@ -230,6 +255,7 @@
           <div class="carousel-slide"><img src="images/extracurriculars/13.jpg" alt="Extracurricular image 13" onerror="this.style.display='none'" /></div>
           <div class="carousel-slide"><img src="images/extracurriculars/14.jpg" alt="Extracurricular image 14" onerror="this.style.display='none'" /></div>
           <div class="carousel-slide"><img src="images/extracurriculars/15.jpg" alt="Extracurricular image 15" onerror="this.style.display='none'" /></div>
+          <div class="carousel-slide"><img src="images/extracurriculars/16.jpg" alt="Extracurricular image 16" onerror="this.style.display='none'" /></div>
         </div>
         <button class="carousel-btn carousel-btn-next" aria-label="Next image">›</button>
       </div>
@@ -270,8 +296,10 @@
   </section>
 
   <section id="skills">
-    <div class="section-title">Skills & Capabilities</div>
-    <div class="section-desc">Technical skills, soft skills, and areas of expertise developed through academics, internship, and extracurricular activities.</div>
+    <div class="section-header">
+      <div class="section-title">Skills & Capabilities</div>
+      <div class="section-desc">Technical skills, soft skills, and areas of expertise developed through academics, internship, and extracurricular activities.</div>
+    </div>
 
     <div class="capabilities">
       <div class="cap-card">
@@ -307,15 +335,10 @@
   </section>
 
   <section id="contact">
-    <div class="section-title">Let's collaborate</div>
-    <div class="section-desc">Tell me about your project and I’ll get back within 1–2 days.</div>
-
-    <form>
-      <input type="text" placeholder="Name" />
-      <input type="email" placeholder="Email" />
-      <textarea rows="5" placeholder="Message"></textarea>
-      <button>Send message</button>
-    </form>
+    <div class="section-header">
+      <div class="section-title">Connect with me</div>
+      <div class="section-desc">Let's connect and collaborate on exciting projects.</div>
+    </div>
   </section>
 
   <!-- External JS -->

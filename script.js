@@ -348,12 +348,91 @@ function closeProjectModal() {
   document.body.style.overflow = '';
 }
 
+// SECTION INDICATOR FUNCTIONALITY
+function initSectionIndicator() {
+  const sections = document.querySelectorAll('section[id]');
+  const indicators = document.querySelectorAll('.section-indicator-dot');
+  
+  function updateIndicator() {
+    const scrollPos = window.scrollY + 200; // Offset for better detection
+    
+    sections.forEach((section, index) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+      
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        indicators.forEach(indicator => {
+          indicator.classList.remove('active');
+          if (indicator.getAttribute('data-section') === sectionId) {
+            indicator.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+  
+  // Update on scroll
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateIndicator();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  
+  // Initial update
+  updateIndicator();
+  
+  // Smooth scroll on indicator click
+  indicators.forEach(indicator => {
+    indicator.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = indicator.getAttribute('data-section');
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        const offset = 100;
+        const targetPosition = targetSection.offsetTop - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
+
+// PAGE LOADER
+function hideLoader() {
+  const loader = document.getElementById('pageLoader');
+  if (loader) {
+    loader.classList.add('hidden');
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 500);
+  }
+}
+
 // Initialize all carousels
 document.addEventListener('DOMContentLoaded', () => {
+  // Hide loader when page is loaded
+  window.addEventListener('load', () => {
+    setTimeout(hideLoader, 300);
+  });
+
+  // Fallback: hide loader after a maximum time
+  setTimeout(hideLoader, 2000);
+
   const carousels = document.querySelectorAll('.carousel');
   carousels.forEach(carousel => {
     initCarousel(carousel);
   });
+
+  // Initialize section indicator
+  initSectionIndicator();
 
   // Modal close functionality
   const modalClose = document.querySelector('.project-modal-close');
