@@ -49,9 +49,26 @@ nav a {
   color: var(--text-muted);
   font-size: 0.95rem;
   transition: 0.2s;
+  position: relative;
 }
 
 nav a:hover { color: var(--text-dark); }
+
+nav a.active {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
 
 .nav-btn {
   padding: 10px 18px;
@@ -222,6 +239,139 @@ section {
   line-height: 1.6;
 }
 
+/* ABOUT LAYOUT */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  align-items: start;
+  margin: 40px 0;
+}
+
+.about-image-container {
+  position: sticky;
+  top: 120px;
+  width: 100%;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* ABOUT CONTENT */
+.about-content {
+  margin: 40px 0 60px;
+  max-width: 900px;
+}
+
+.about-intro {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* EXTRACURRICULARS CONTENT */
+.extracurriculars-content {
+  margin: 40px 0 60px;
+  max-width: 1000px;
+}
+
+.extracurriculars-section {
+  margin-bottom: 50px;
+}
+
+.extracurriculars-section-title {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.extracurriculars-subsection {
+  margin-bottom: 40px;
+}
+
+.extracurriculars-subsection-title {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.extracurriculars-item {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-soft);
+  transition: 0.25s;
+}
+
+.extracurriculars-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.extracurriculars-item-title {
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.extracurriculars-role {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.extracurriculars-role strong {
+  color: var(--text-dark);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.extracurriculars-item p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.extracurriculars-item ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 8px;
+}
+
+.extracurriculars-item ul li {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.extracurriculars-item ul li::before {
+  content: "•";
+  color: var(--accent);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
 /* WORK GRID */
 .work-grid {
   display: grid;
@@ -241,6 +391,31 @@ section {
 .work-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+.clickable-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.clickable-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(255, 140, 167, 0.15);
+}
+
+.card-click-hint {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  opacity: 0.7;
+  transition: 0.25s;
+  font-weight: 500;
+}
+
+.clickable-card:hover .card-click-hint {
+  opacity: 1;
+  transform: translateX(4px);
 }
 
 .work-thumb {
@@ -407,24 +582,31 @@ section {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  border: 2px solid var(--accent);
   width: 50px;
   height: 50px;
   border-radius: 50%;
   font-size: 2rem;
+  font-weight: 600;
   cursor: pointer;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-dark);
+  color: var(--accent);
   transition: all 0.3s;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  line-height: 1;
+  padding: 0;
+  margin: 0;
 }
 
 .carousel-btn:hover {
-  background: rgba(255, 255, 255, 1);
+  background: var(--accent);
+  color: white;
+  backdrop-filter: blur(0px);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -551,6 +733,15 @@ section {
   background: rgba(255,255,255,0.9);
   border-radius: 50%;
   transition: all 0.3s;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+.project-modal-close span {
+  display: inline-block;
+  line-height: 1;
+  transform: translateY(-0.5px);
 }
 
 .project-modal-close:hover {
@@ -597,6 +788,129 @@ section {
 @keyframes slideUp {
   from { transform: translateY(30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+/* CONTENT MODAL */
+.content-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 140, 167, 0.15);
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.3s ease;
+}
+
+.content-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-modal-content {
+  background: var(--bg-light);
+  margin: 20px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 90vh;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(255, 140, 167, 0.25);
+  border: 1px solid var(--accent-light);
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+.content-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--accent);
+  font-size: 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  transition: all 0.3s;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+.content-modal-close span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.content-modal-close:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.1);
+}
+
+.content-modal-body {
+  padding: 50px 40px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-light);
+}
+
+.content-modal-body h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.content-modal-body p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.content-modal-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+}
+
+.content-modal-body ul li {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.content-modal-body ul li::before {
+  content: "•";
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.content-modal-body strong {
+  color: var(--text-dark);
+  font-weight: 600;
 }
 
 /* Responsive Styles */
@@ -670,6 +984,21 @@ section {
     font-size: 0.95rem;
   }
 
+  /* About layout adjustments */
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-image-container {
+    position: relative;
+    top: 0;
+  }
+
+  .about-cards {
+    gap: 20px;
+  }
+
   /* Work grid adjustments */
   .work-grid {
     grid-template-columns: 1fr;
@@ -694,6 +1023,60 @@ section {
 
   .project-modal-body img {
     max-height: 300px;
+  }
+
+  /* About and Extracurriculars content adjustments */
+  .about-content {
+    margin: 30px 0 40px;
+  }
+
+  .about-intro {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .extracurriculars-content {
+    margin: 30px 0 40px;
+  }
+
+  .extracurriculars-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .extracurriculars-subsection-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .extracurriculars-item {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .extracurriculars-item-title {
+    font-size: 1.05rem;
+  }
+
+  /* Content modal adjustments */
+  .content-modal-content {
+    width: 95%;
+    margin: 10px;
+    max-height: 95vh;
+  }
+
+  .content-modal-body {
+    padding: 30px 24px;
+  }
+
+  .content-modal-body h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .content-modal-body p,
+  .content-modal-body ul li {
+    font-size: 0.95rem;
   }
 }
 

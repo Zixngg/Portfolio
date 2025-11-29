@@ -62,36 +62,37 @@
       <div class="section-desc">A holistic approach to technology, community, and personal growth.</div>
     </div>
 
-    <!-- Image Carousel -->
-    <div class="carousel-container">
-      <div class="carousel" data-carousel="about" tabindex="0">
-        <button class="carousel-btn carousel-btn-prev" aria-label="Previous image">‹</button>
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="images/about/1.jpg" alt="About me image 1" onerror="this.style.display='none'" /></div>
-          <div class="carousel-slide"><img src="images/about/2.jpg" alt="About me image 2" onerror="this.style.display='none'" /></div>
-          <div class="carousel-slide"><img src="images/about/3.jpg" alt="About me image 3" onerror="this.style.display='none'" /></div>
-          <div class="carousel-slide"><img src="images/about/4.jpg" alt="About me image 4" onerror="this.style.display='none'" /></div>
-          <div class="carousel-slide"><img src="images/about/5.jpg" alt="About me image 5" onerror="this.style.display='none'" /></div>
+    <div class="about-layout">
+      <!-- Single Image on Left -->
+      <div class="about-image-container">
+        <img src="images/about/1.jpg" alt="About me" class="about-image" onerror="this.style.display='none'" />
+      </div>
+
+      <!-- Cards on Right -->
+      <div class="about-cards">
+        <div class="work-card clickable-card" data-modal="about-intro">
+          <h3>👋 Introduction</h3>
+          <p>Third-year IT student at Singapore Polytechnic, specializing in Software Development. Passionate about using technology to solve real problems and make a positive impact.</p>
+          <div class="card-click-hint">Click to read more →</div>
         </div>
-        <button class="carousel-btn carousel-btn-next" aria-label="Next image">›</button>
-      </div>
-      <div class="carousel-dots"></div>
-    </div>
 
-    <div class="work-grid">
-      <div class="work-card">
-        <h3>🎓 Student Life</h3>
-        <p>Currently pursuing my studies at Singapore Polytechnic, School of Computing, where I balance academics with active participation in campus life.</p>
-      </div>
+        <div class="work-card clickable-card" data-modal="about-journey">
+          <h3>💻 Technical Journey</h3>
+          <p>Started coding in first year, expanding skillset in Java, JavaScript, HTML, CSS, MySQL, Power BI, and productivity tools.</p>
+          <div class="card-click-hint">Click to read more →</div>
+        </div>
 
-      <div class="work-card">
-        <h3>💼 Professional Growth</h3>
-        <p>Technical Development Intern at Absolute Kinetics Consultancy (AKC), gaining real-world experience in software development and technical solutions.</p>
-      </div>
+        <div class="work-card clickable-card" data-modal="about-values">
+          <h3>🤝 Values & Leadership</h3>
+          <p>Teamwork, communication, and leadership through sports and SOCC involvement. Treasurer of School of Computing Club.</p>
+          <div class="card-click-hint">Click to read more →</div>
+        </div>
 
-      <div class="work-card">
-        <h3>🤝 Community & Sports</h3>
-        <p>Active in community services, netball, and the School of Computing Club (SOCC), contributing to both campus and wider community initiatives.</p>
+        <div class="work-card clickable-card" data-modal="about-aspirations">
+          <h3>🎯 Future Goals</h3>
+          <p>Aspiring to further education in Computer Science/Information Systems while contributing to communities through technology.</p>
+          <div class="card-click-hint">Click to read more →</div>
+        </div>
       </div>
     </div>
   </section>
@@ -196,6 +197,17 @@
       </div>
     </div>
 
+    <!-- Content Details Modal -->
+    <div id="contentModal" class="content-modal">
+      <div class="content-modal-content">
+        <span class="content-modal-close">&times;</span>
+        <div class="content-modal-body">
+          <h2 id="contentModalTitle"></h2>
+          <div id="contentModalBody"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="work-grid">
       <div class="work-card">
         <div class="work-thumb"></div>
@@ -263,34 +275,46 @@
     </div>
 
     <div class="work-grid">
-      <div class="work-card">
-        <div class="work-thumb"></div>
-        <h3>Community Services</h3>
-        <p>Active participation in community service initiatives, contributing to social causes and making a positive impact in the community.</p>
-        <div class="tags">
-          <div class="tag">Volunteering</div>
-          <div class="tag">Community Impact</div>
-        </div>
+      <div class="work-card clickable-card" data-modal="socc-treasurer">
+        <h3>🎓 SOCC Treasurer</h3>
+        <p>Managing financial matters and supporting student engagement activities at the School of Computing Club (2024–2025).</p>
+        <div class="card-click-hint">Click to read more →</div>
       </div>
 
-      <div class="work-card">
-        <div class="work-thumb"></div>
-        <h3>Netball</h3>
-        <p>Dedicated netball player, balancing sports with academics and developing teamwork, discipline, and resilience.</p>
-        <div class="tags">
-          <div class="tag">Sports</div>
-          <div class="tag">Teamwork</div>
-        </div>
+      <div class="work-card clickable-card" data-modal="socc-logistics">
+        <h3>📋 SOCC Logistics</h3>
+        <p>Assisted in event logistics and coordination as Logistics Subcommittee Member (2023).</p>
+        <div class="card-click-hint">Click to read more →</div>
       </div>
 
-      <div class="work-card">
-        <div class="work-thumb"></div>
-        <h3>School of Computing Club (SOCC)</h3>
-        <p>Active member of SOCC, participating in club activities, events, and initiatives that foster computing community and knowledge sharing.</p>
-        <div class="tags">
-          <div class="tag">Campus Life</div>
-          <div class="tag">Community</div>
-        </div>
+      <div class="work-card clickable-card" data-modal="school-ambassador">
+        <h3>🏆 School Ambassador</h3>
+        <p>Certificate of Appreciation for outstanding contributions supporting outreach events (2024).</p>
+        <div class="card-click-hint">Click to read more →</div>
+      </div>
+
+      <div class="work-card clickable-card" data-modal="sp-cares">
+        <h3>🍽️ SP CARES Food Drive</h3>
+        <p>Student volunteer for campus-wide food donation initiative supporting families in need.</p>
+        <div class="card-click-hint">Click to read more →</div>
+      </div>
+
+      <div class="work-card clickable-card" data-modal="touch-community">
+        <h3>🚗 Meals on Wheels</h3>
+        <p>Delivered meals to elderly residents in Bukit Panjang through TOUCH Community Services.</p>
+        <div class="card-click-hint">Click to read more →</div>
+      </div>
+
+      <div class="work-card clickable-card" data-modal="foodnotes">
+        <h3>📦 FoodNotes 2023</h3>
+        <p>Supported food collection activities with Bukit Panjang Youth Network (PAYM).</p>
+        <div class="card-click-hint">Click to read more →</div>
+      </div>
+
+      <div class="work-card clickable-card" data-modal="sparkletots">
+        <h3>🎈 Children's Day Event</h3>
+        <p>Engaged children through games and activities at PCF Sparkletots (Welfare Services Club).</p>
+        <div class="card-click-hint">Click to read more →</div>
       </div>
     </div>
   </section>
