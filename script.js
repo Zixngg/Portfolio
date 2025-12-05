@@ -471,6 +471,7 @@ function initSectionIndicator() {
   
   function updateIndicator() {
     const scrollPos = window.scrollY + 200; // Offset for better detection
+    let currentSectionId = null;
     
     sections.forEach((section, index) => {
       const sectionTop = section.offsetTop;
@@ -478,6 +479,8 @@ function initSectionIndicator() {
       const sectionId = section.getAttribute('id');
       
       if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        currentSectionId = sectionId;
+        
         // Update section indicator dots
         indicators.forEach(indicator => {
           indicator.classList.remove('active');
@@ -501,8 +504,20 @@ function initSectionIndicator() {
     
     // Handle case when at top of page (header section)
     if (window.scrollY < 100) {
+      currentSectionId = null;
       navLinks.forEach(link => link.classList.remove('active'));
       indicators.forEach(indicator => indicator.classList.remove('active'));
+    }
+    
+    // Update URL hash to reflect current section (without triggering scroll)
+    const newHash = currentSectionId ? `#${currentSectionId}` : '';
+    if (window.location.hash !== newHash) {
+      // Use replaceState to update URL without adding to history or triggering scroll
+      // If newHash is empty, remove hash by using pathname + search
+      const newUrl = newHash 
+        ? newHash 
+        : window.location.pathname + window.location.search;
+      history.replaceState(null, '', newUrl);
     }
   }
   
@@ -550,8 +565,98 @@ function hideLoader() {
   }
 }
 
+// Keep browser scroll restoration but prevent unwanted scrolling on refresh
+// Handle scroll prevention immediately to catch it before restoration happens
+(function() {
+  const hash = window.location.hash;
+  
+  if (!hash) {
+    // No hash: prevent unwanted scroll restoration on refresh
+    // Temporarily disable scroll restoration to prevent unwanted scroll on refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    
+    // Scroll to top immediately
+    window.scrollTo(0, 0);
+    
+    // Keep checking and correcting scroll position until page is fully loaded
+    let checkCount = 0;
+    const maxChecks = 20;
+    const checkScroll = () => {
+      if (window.scrollY > 0 && checkCount < maxChecks) {
+        window.scrollTo(0, 0);
+        checkCount++;
+        requestAnimationFrame(checkScroll);
+      }
+    };
+    
+    // Start checking immediately
+    requestAnimationFrame(checkScroll);
+    
+    // Also check on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.scrollY > 0) {
+        window.scrollTo(0, 0);
+        // Restart checking
+        checkCount = 0;
+        requestAnimationFrame(checkScroll);
+      }
+    }, { once: true });
+    
+    // Re-enable scroll restoration after page fully loads (for future navigations)
+    window.addEventListener('load', () => {
+      // Final scroll to top
+      window.scrollTo(0, 0);
+      
+      // One more check after a short delay
+      setTimeout(() => {
+        if (window.scrollY > 0) {
+          window.scrollTo(0, 0);
+        }
+        
+        // Re-enable scroll restoration for normal navigation
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'auto';
+        }
+      }, 100);
+    }, { once: true });
+  } else {
+    // Has hash: ensure we scroll to the hash section, overriding any scroll restoration
+    // This ensures that when you refresh at /#internship, you stay at that section
+    window.addEventListener('load', () => {
+      const targetElement = document.querySelector(hash);
+      if (targetElement) {
+        // Wait for any scroll restoration to complete, then scroll to hash section
+        setTimeout(() => {
+          const offset = 100;
+          const targetPosition = targetElement.offsetTop - offset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'auto' // Use 'auto' instead of 'smooth' for immediate scroll
+          });
+        }, 100);
+      }
+    }, { once: true });
+  }
+})();
+
 // Initialize all carousels
 document.addEventListener('DOMContentLoaded', () => {
+  // Additional safeguard: if no hash and we're scrolled down, go to top
+  // This catches any scroll restoration that might happen after our initial prevention
+  // Only do this if there's no hash (hash navigation should work normally)
+  if (!window.location.hash) {
+    // Use multiple requestAnimationFrame calls to catch late scroll restoration
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 0) {
+          window.scrollTo(0, 0);
+        }
+      });
+    });
+  }
+
   // Hide loader when page is loaded
   window.addEventListener('load', () => {
     setTimeout(hideLoader, 300);
