@@ -14,11 +14,27 @@
 <body>
 
   <div class="project-detail-container">
-    <a href="index.html#projects" class="back-link">Back to Projects</a>
+    <a href="index.html#projects" class="back-button" aria-label="Back to projects">
+      <svg viewBox="0 0 1024 1024">
+        <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path>
+        <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path>
+      </svg>
+      Back
+    </a>
     
-    <div class="section-header">
-      <h1 class="section-title">Gamified Sustainability Task Tracker</h1>
-      <p class="section-desc">A full-stack web application designed to gamify eco-friendly habits.</p>
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <h1 class="section-title">Gamified Sustainability Task Tracker</h1>
+        <p class="section-desc">A full-stack web application designed to gamify eco-friendly habits.</p>
+      </div>
+      <div style="flex-shrink: 0;">
+        <a href="https://github.com/ST0503-BED/bed-ca2-Zixngg.git" target="_blank" class="github-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          View Code on GitHub
+        </a>
+      </div>
     </div>
 
     <div class="project-content">
@@ -50,13 +66,46 @@
       </ul>
     </div>
 
-    <div class="project-try-section">
-      <h3>Try the Project</h3>
-      <p>Experience the Gamified Sustainability Task Tracker below:</p>
-      <div class="project-embed" id="project-embed">
-        <!-- Project will be embedded here -->
-        <p>Project embed will appear here. You can add an iframe or embed code for your live project.</p>
-      </div>
+
+    <div class="project-section">
+      <h3>🔐 Secure Authentication & User Management</h3>
+      <p>I implemented a complete authentication flow using <strong>JWT (JSON Web Tokens)</strong> and <strong>bcrypt</strong>, ensuring that user data and sessions are managed securely.</p>
+      <ul>
+        <li><strong>JWT Middleware</strong>: Validates tokens before allowing access to actions like completing tasks or purchasing items. Tokens expire every 15 minutes for improved security.</li>
+        <li><strong>Password Hashing with Bcrypt</strong>: User passwords are salted and hashed before storage, ensuring no plaintext passwords exist in the database.</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🧩 Backend Architecture & Routing</h3>
+      <p>The backend routes requests based on HTTP methods (GET, POST, PUT, DELETE) and endpoints. Middleware is used to compare passwords, validate tokens, handle form submissions, and manage CRUD operations (e.g., tasks, creatures, messages).</p>
+      <p>Form submissions on the frontend get processed and stored in the backend—for example, posting a message, purchasing an item, or registering/logging in.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>✉️ Global Messaging System</h3>
+      <p>A fully functional messaging page allows users to post global messages, edit or delete their own messages, and view messages from all users. This demonstrates CRUD operations, DOM manipulation, and API integration via <strong>Fetch API</strong>.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>📦 Fantasy-Themed Creatures, Items & Inventory System</h3>
+      <p>Users can buy creatures and items using points earned from tasks. I created multiple dynamic pages for viewing all creatures/items, viewing details of a specific creature/item, purchasing based on point validation, and updating user inventory.</p>
+      <p><strong>Error handling</strong> was implemented to ensure the user is notified if they do not have enough points, a purchase succeeds, or a creature cannot be found.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>🎨 UI/UX & Visual Design</h3>
+      <p>The website uses a consistent <strong>purple fantasy theme</strong>, with the <em>Audiowide</em> font to enhance the game-like feeling. User profile sections are clearly segmented (Items vs. Creatures), forms and buttons are cleanly labelled, and messaging textbox is placed at the top for clarity. Backgrounds and component layouts follow an immersive theme.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>🧠 Modular Frontend & JavaScript Logic</h3>
+      <p>I practiced modularity by reusing similar structures across HTML files and maintaining consistent GET/POST logic across JavaScript components. This includes extracting URL parameters (e.g., creature_id), fetching data from backend, displaying conditional UI elements, and showing purchase buttons only when appropriate.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>🔗 Frontend–Backend Integration</h3>
+      <p>All interactions between pages and the server were handled through a custom <code>fetchMethod(url, method, data)</code> wrapper, supporting GET (retrieve creatures, items, messages, tasks), POST (create messages, register users, login), PUT (edit tasks/messages), and DELETE (remove creatures/messages). This enhanced scalability and minimized repeated code.</p>
     </div>
   </div>
 

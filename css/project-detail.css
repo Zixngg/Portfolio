@@ -6,6 +6,14 @@
   padding: 0 0 80px 0;
 }
 
+.project-detail-container .section-header {
+  margin-bottom: 20px;
+}
+
+.project-detail-container .section-desc {
+  margin-bottom: 20px;
+}
+
 .project-header {
   margin-bottom: 50px;
 }
@@ -96,11 +104,49 @@
 
 .project-embed {
   width: 100%;
-  min-height: 600px;
+  min-height: 400px;
   border: 1px solid var(--border-light);
   border-radius: 12px;
   background: white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-embed img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.project-embed video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.github-link:hover {
+  background: var(--text-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.github-link svg {
+  fill: white;
 }
 
 .project-embed p {
@@ -126,28 +172,57 @@
   display: none;
 }
 
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 40px;
-  color: var(--text-muted);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.3s;
-  padding: 8px 16px;
-  border-radius: 8px;
+.project-section code {
+  background: var(--accent-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Geist Mono', 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  color: var(--accent);
 }
 
-.back-link:hover {
+.back-button {
+  display: flex;
+  height: 3em;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee4b;
+  border-radius: 12px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border: none;
+  background: var(--card-bg);
+  margin-bottom: 40px;
+  margin-top: 40px;
+  text-decoration: none;
   color: var(--text-dark);
+  font-weight: 500;
+}
+
+.back-button > svg {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+  height: 20px;
+  width: 20px;
+}
+
+.back-button:hover > svg {
+  font-size: 1.2em;
+  transform: translateX(-5px);
+}
+
+.back-button:hover {
+  box-shadow: 9px 9px 33px rgba(255, 140, 167, 0.2), -9px -9px 33px rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
   background: var(--accent-light);
 }
 
-.back-link:before {
-  content: "← ";
-  margin-right: 8px;
-  font-size: 1.1rem;
+.back-button svg path {
+  fill: var(--text-dark);
 }
 
 /* Responsive adjustments */
