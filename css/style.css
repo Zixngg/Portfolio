@@ -1,3 +1,21 @@
+/* Geist Sans Font - Multiple sources for reliability */
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('https://fonts.vercel.sh/geist-sans.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geist Mono Font - Multiple sources for reliability */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('https://fonts.vercel.sh/geist-mono.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg-light: #fff7f7;
   --text-dark: #0f172a;
@@ -12,10 +30,15 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg-light);
   color: var(--text-dark);
   overflow-x: hidden;
+}
+
+/* Use Geist Mono for code elements */
+code, pre {
+  font-family: 'Geist Mono', 'Courier New', Courier, monospace;
 }
 
 /* NAV */
