@@ -353,35 +353,35 @@ const contentData = {
   'about-intro': {
     title: 'Introduction',
     content: `
-      <p>Hello! My name is Wang Zixing, and I am currently a third-year Information Technology student at Singapore Polytechnic, specializing in Software Development. I am passionate about using technology to solve real problems, build meaningful digital experiences, and make a positive impact on people's lives.</p>
+      <p>Hello! My name is Wang Zixing, and I'm currently a third-year Information Technology student at Singapore Polytechnic, specializing in Software Development. I'm passionate about using technology to solve real problems, build meaningful digital experiences, and make a positive impact on people's lives.</p>
     `
   },
   'about-journey': {
     title: 'Technical Journey',
     content: `
-      <p>My journey in IT began in my first year, when I discovered how much I enjoyed coding—especially the process of troubleshooting, building programs from scratch, and seeing ideas come to life through software. Since then, I have been actively expanding my technical skillset, gaining hands-on experience in Java, JavaScript, HTML, CSS, MySQL, Power BI, and various productivity tools such as Microsoft Excel and Google Sheets.</p>
+      <p>My journey in IT began in my first year, when I discovered how much I enjoyed coding. I especially love the process of troubleshooting, building programs from scratch, and seeing ideas come to life through software. Since then, I've been actively expanding my technical skillset, gaining hands-on experience in Java, JavaScript, HTML, CSS, MySQL, Power BI, and various productivity tools like Microsoft Excel and Google Sheets.</p>
     `
   },
   'about-values': {
     title: 'Values & Leadership',
     content: `
-      <p>Beyond academics, I strongly value teamwork, communication, and leadership. Having participated in team sports like Netball and Floorball, I developed resilience, discipline, and the ability to collaborate effectively under pressure. These foundational qualities now guide how I approach group projects and technical work.</p>
-      <p>At Singapore Polytechnic, I also serve as the Treasurer of the School of Computing Club (SOCC), previously contributing as a Logistics Subcommittee Member. This role has strengthened my organisational and budgeting skills, and has given me opportunities to support student events and initiatives within the School of Computing.</p>
+      <p>Beyond academics, I strongly value teamwork, communication, and leadership. Having participated in team sports like Netball and Floorball, I've developed resilience, discipline, and the ability to collaborate effectively under pressure. These foundational qualities now guide how I approach group projects and technical work.</p>
+      <p>At Singapore Polytechnic, I also serve as the Treasurer of the School of Computing Club (SOCC), and I previously contributed as a Logistics Subcommittee Member. This role has strengthened my organisational and budgeting skills, and it's given me opportunities to support student events and initiatives within the School of Computing.</p>
     `
   },
   'about-aspirations': {
     title: 'Future Goals',
     content: `
-      <p>I aspire to further my education in Computer Science / Information Systems and continue developing my technical expertise—while also contributing to the communities around me. Whether through software, data, or service, I hope to build solutions that enhance user experience, create value, and drive positive change.</p>
+      <p>I aspire to further my education in Computer Science or Information Systems and continue developing my technical expertise, while also contributing to the communities around me. Whether through software, data, or service, I hope to build solutions that enhance user experience, create value, and drive positive change.</p>
     `
   },
   'socc-treasurer': {
-    title: 'SOCC Treasurer (2024–2025 April)',
+    title: 'SOCC Treasurer (2024-2025 April)',
     content: `
       <p><strong>School of Computing Club (SOCC), Singapore Polytechnic</strong></p>
       <ul>
-        <li>Manage and oversee the club's financial matters, including budgeting, expense tracking, and fund allocation for events.</li>
-        <li>Work closely with the executive committee to plan and support student engagement activities.</li>
+        <li>I manage and oversee the club's financial matters, including budgeting, expense tracking, and fund allocation for events.</li>
+        <li>I work closely with the executive committee to plan and support student engagement activities.</li>
       </ul>
     `
   },
@@ -390,14 +390,17 @@ const contentData = {
     content: `
       <p><strong>School of Computing Club (SOCC), Singapore Polytechnic</strong></p>
       <ul>
-        <li>Assisted in planning and executing event logistics using Excel and Google Sheets for inventory management, equipment preparation, and event coordination.</li>
+        <li>I assisted in planning and executing event logistics using Excel and Google Sheets for inventory management, equipment preparation, and event coordination.</li>
       </ul>
     `
   },
   'school-ambassador': {
-    title: 'Certificate of Appreciation – School Ambassador (2024)',
+    title: 'Certificate of Appreciation - School Ambassador (2024)',
     content: `
-      <p>Awarded by the School of Computing, Singapore Polytechnic, in recognition of outstanding contributions as a School Ambassador, supporting outreach events and representing the school to prospective students.</p>
+      <ul>
+        <li>I was awarded this certificate by the School of Computing, Singapore Polytechnic, in recognition of my outstanding contributions as a School Ambassador.</li> 
+        <li>I supported outreach events and represented the school to prospective students.</li>
+      <ul>
     `
   },
   'sp-cares': {
@@ -405,38 +408,38 @@ const contentData = {
     content: `
       <p><strong>Singapore Polytechnic | Student Volunteer</strong></p>
       <ul>
-        <li>Donated food items and contributed to SP's campus-wide initiative supporting families and individuals in need.</li>
-        <li>Developed a deeper appreciation for community support and social responsibility.</li>
+        <li>I donated food items and contributed to SP's campus-wide initiative supporting families and individuals in need.</li>
+        <li>This experience helped me develop a deeper appreciation for community support and social responsibility.</li>
       </ul>
     `
   },
   'touch-community': {
-    title: 'TOUCH Community Services – Meals on Wheels',
+    title: 'TOUCH Community Services - Meals on Wheels',
     content: `
       <p><strong>Student Volunteer</strong></p>
       <ul>
-        <li>Delivered meals to elderly residents in Bukit Panjang through a door-to-door outreach programme.</li>
-        <li>Interacted with seniors and gained a better understanding of empathy, inclusiveness, and the importance of community care.</li>
+        <li>I delivered meals to elderly residents in Bukit Panjang through a door-to-door outreach programme.</li>
+        <li>Interacting with seniors helped me gain a better understanding of empathy, inclusiveness, and the importance of community care.</li>
       </ul>
     `
   },
   'foodnotes': {
-    title: 'Bukit Panjang Youth Network – FoodNotes 2023 (PAYM)',
+    title: 'Bukit Panjang Youth Network - FoodNotes 2023 (PAYM)',
     content: `
       <p><strong>Student Volunteer</strong></p>
       <ul>
-        <li>Supported food-collection activities by gathering donated items from residents and preparing them for distribution.</li>
-        <li>Strengthened teamwork and communication skills through collaboration with other youth volunteers.</li>
+        <li>I supported food-collection activities by gathering donated items from residents and preparing them for distribution.</li>
+        <li>This experience strengthened my teamwork and communication skills through collaboration with other youth volunteers.</li>
       </ul>
     `
   },
   'sparkletots': {
-    title: 'PCF Sparkletots – Children\'s Day Event',
+    title: 'PCF Sparkletots - Children\'s Day Event',
     content: `
       <p><strong>Welfare Services Club | Student Volunteer</strong></p>
       <ul>
-        <li>Engaged young children through games and activities designed to create a joyful and memorable Children's Day.</li>
-        <li>Developed interpersonal and communication skills while contributing to a fun learning environment.</li>
+        <li>I engaged young children through games and activities designed to create a joyful and memorable Children's Day.</li>
+        <li>This experience helped me develop interpersonal and communication skills while contributing to a fun learning environment.</li>
       </ul>
     `
   }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>E-Commerce Web Application – Portfolio</title>
+  <title>Restaurant Management System – Portfolio</title>
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
@@ -22,55 +22,204 @@
       Back
     </a>
     
-    <div class="section-header">
-      <h1 class="section-title">E-Commerce Web Application</h1>
-      <p class="section-desc">A database-driven application demonstrating backend logic, SQL development, and analytics features.</p>
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <h1 class="section-title">Restaurant Management System</h1>
+        <p class="section-desc">A full-stack web application with CI/CD pipeline implementation, featuring admin menu management, real-time delivery tracking, and automated testing.</p>
+      </div>
+      <div style="flex-shrink: 0; display: flex; flex-direction: column; gap: 12px;">
+        <a href="https://github.com/soc-cicd/ay2425s2-project-class-2a22-group-4" target="_blank" class="github-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          View Code on GitHub
+        </a>
+        <a href="https://cicd-2a22-group4-restaurantmanagement-dwg8b9hjh3etbhh6.southeastasia-01.azurewebsites.net/home.html" target="_blank" class="github-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.34.16-2h4.68c.09.66.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/>
+          </svg>
+          View Live Application
+        </a>
+      </div>
     </div>
 
     <div class="project-content">
-      <p>This project focused on creating a functional e-commerce backend system with strong emphasis on database design, SQL development, and data processing. I designed database tables to support products, customers, transactions, reviews, and analytics.</p>
+      <p>This project involved developing a full-stack restaurant management system with a focus on CI/CD implementation, automated testing, and real-world features. I worked on multiple components including admin menu management, delivery tracking, image uploads, and state management.</p>
 
-      <p>I implemented CRUD operations, user-defined SQL functions, and stored procedures to handle real-world business logic. Examples include:</p>
+      <p>I implemented a comprehensive filtering system for admin menu management, allowing admins to easily access specific menu items and upload photos. For the delivery option, I was inspired by popular delivery apps like Grab, Food Panda, and Shopee, implementing real-time delivery tracking where users can monitor their delivery progress status.</p>
 
-      <ul>
-        <li>Calculating running total spending for each customer</li>
-        <li>Computing Customer Lifetime Value (CLV)</li>
-        <li>Generating review summaries</li>
-        <li>Admin analytics to compare spending across age groups</li>
-      </ul>
+      <p>The project required integration across frontend, backend, and database components, ensuring seamless interaction and functionality. I also implemented a proper CI/CD pipeline using GitHub Actions, with automated testing using Playwright to ensure code quality and system reliability.</p>
+    </div>
 
-      <p>Robust error handling and logical constraints were included to ensure data integrity. The project also required use of version control, SQL best practices, and structured documentation.</p>
+    <div class="project-section" style="background: var(--accent-light); border-left: 4px solid var(--accent); padding: 16px 24px;">
+      <h3 style="font-size: 1.3rem; margin-bottom: 8px;">👥 Group Project</h3>
+      <p style="margin: 0; font-size: 0.95rem;">This is a group project developed as part of a team. You can view my specific contributions and areas of work on my <a href="https://github.com/soc-cicd/ay2425s2-project-class-2a22-group-4/wiki/Wang-Zixing's-Progress" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: 500;">GitHub Wiki</a>.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>📹 Video Demonstration</h3>
+      <p>This video demonstrates how admins update the food preparation status and delivery status after a user has placed an order.</p>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/akpDt_Z5Q4o" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          title="Restaurant Management System - Admin Order Status Update Demo">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h3>🔑 Demo Credentials</h3>
+      <p>You can test the live application using the following demo credentials:</p>
+      <div style="background: var(--card-bg); padding: 20px; border-radius: 12px; margin-top: 16px; border: 1px solid var(--border-light);">
+        <div style="margin-bottom: 16px;">
+          <strong style="color: var(--accent);">Admin Account:</strong>
+          <div style="margin-top: 8px; font-family: 'Geist Mono', 'Courier New', monospace; color: var(--text-dark);">
+            <div>Username: <span id="admin-username">DemoAdmin</span></div>
+            <div>Password: <span id="admin-password">DemoAdmin!123</span></div>
+          </div>
+        </div>
+        <div>
+          <strong style="color: var(--accent);">User Account:</strong>
+          <div style="margin-top: 8px; font-family: 'Geist Mono', 'Courier New', monospace; color: var(--text-dark);">
+            <div>Username: <span id="user-username">DemoUser</span></div>
+            <div>Password: <span id="user-password">DemoUser!123</span></div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top: 16px; font-size: 0.9rem; color: var(--text-muted);">
+        <em>Note: These are demo credentials for testing purposes only. Please use responsibly.</em>
+      </p>
     </div>
 
     <div class="project-section">
       <h3>Key Features & Technologies</h3>
       <ul>
-        <li>SQL database schema design (tables, relationships, constraints)</li>
-        <li>CRUD operations & stored procedures</li>
-        <li>Functions for CLV, reviews, and total spending</li>
-        <li>Admin analytics for customer segmentation</li>
-        <li>Version control (Git) and collaborative workflow</li>
+        <li>Full-stack development (Frontend, Backend, Database)</li>
+        <li>Admin menu management with filtering and image uploads</li>
+        <li>Real-time delivery tracking system</li>
+        <li>JWT-based authentication</li>
+        <li>CI/CD pipeline with GitHub Actions</li>
+        <li>Automated testing with Playwright</li>
+        <li>Azure App Service deployment</li>
+        <li>Multer for image handling</li>
       </ul>
     </div>
 
     <div class="project-section">
       <h3>Skills Developed</h3>
       <ul>
-        <li>Database normalization and ERD planning</li>
-        <li>Advanced SQL functions and procedures</li>
-        <li>Backend data processing</li>
-        <li>Analytical thinking using real-world business metrics</li>
+        <li>CI/CD implementation and automation</li>
+        <li>Full-stack development and integration</li>
+        <li>State management and real-time updates</li>
+        <li>Image upload handling with Multer</li>
+        <li>Automated testing and quality assurance</li>
+        <li>Containerization with Docker</li>
+        <li>Deployment and troubleshooting</li>
       </ul>
     </div>
 
-    <div class="project-try-section">
-      <h3>Try the Project</h3>
-      <p>Experience the E-Commerce Web Application below:</p>
-      <div class="project-embed" id="project-embed">
-        <!-- Project will be embedded here -->
-        <p>Project embed will appear here. You can add an iframe or embed code for your live project.</p>
-      </div>
+    <div class="project-section">
+      <h3>🍽️ Admin Menu Management</h3>
+      <p>I implemented a comprehensive menu management system for admins, allowing them to efficiently manage menu items with advanced filtering capabilities and image uploads.</p>
+      <ul>
+        <li><strong>Advanced Filtering System</strong>: Created a filtering system that allows admins to filter menu items by category, price range, stock range, and sort by price or stock levels. The system dynamically constructs query strings with only non-null parameters to optimize backend queries.</li>
+        <li><strong>Image Upload Functionality</strong>: Implemented image uploads for menu items using Multer, allowing admins to upload and update photos of menu items to improve visual representation. This required handling asynchronous image uploads and file management.</li>
+        <li><strong>Real-Time UI Updates</strong>: Ensured that displayed menu items are dynamically refreshed without requiring a full page reload, providing a smooth user experience.</li>
+        <li><strong>Data Transformation</strong>: Processed input from form fields and dynamically updated displayed menu items by fetching data based on selected criteria, ensuring accurate filtering and performance optimization.</li>
+      </ul>
     </div>
+
+    <div class="project-section">
+      <h3>🚚 Real-Time Delivery Tracking System</h3>
+      <p>I designed and implemented a delivery order tracking system inspired by popular delivery apps, providing users with real-time updates on their delivery progress.</p>
+      <ul>
+        <li><strong>State Management</strong>: Implemented delivery order states including "ASSIGNED", "PICKED_UP", "IN_TRANSIT", and "COMPLETED". Admins can update delivery status through a drag-and-drop interface, and changes reflect immediately on the user side.</li>
+        <li><strong>Real-Time Status Updates</strong>: Created a system that provides live updates to users, ensuring they receive immediate notifications when their delivery status changes. This required multiple API calls to ensure real-time synchronization.</li>
+        <li><strong>Delivery Confirmation Images</strong>: When a delivery is completed, admins can upload a delivery confirmation image showing where the order was placed. This image is displayed to users, providing visual confirmation of delivery completion.</li>
+        <li><strong>User Experience</strong>: The tracking system improves customer satisfaction by providing transparency and real-time visibility into the delivery process, similar to popular delivery platforms.</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🔄 Full-Stack Development</h3>
+      <p>This project required seamless integration across frontend, backend, and database components. I worked on multiple full-stack features that required meaningful changes across different layers of the application.</p>
+      <ul>
+        <li><strong>User Authentication System</strong>: Implemented JWT-based authentication, ensuring secure login/logout sessions. Handled token expiration and user session management dynamically, with proper admin redirection to the correct dashboard.</li>
+        <li><strong>Backend API Development</strong>: Created RESTful APIs to support menu management, delivery tracking, and order processing. Implemented proper error handling and data validation throughout.</li>
+        <li><strong>Database Integration</strong>: Stored delivery status updates and delivery information in the database, allowing persistent order tracking across sessions.</li>
+        <li><strong>Frontend-Backend Communication</strong>: Ensured smooth data flow between frontend and backend, handling asynchronous operations and state synchronization effectively.</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>📊 Data Transformation & Filtering</h3>
+      <p>I implemented a menu filtering system for the Admin Menu Management panel that required sophisticated data transformation to display only relevant items based on selected criteria.</p>
+      <ul>
+        <li><strong>Category-Based Filtering</strong>: Uses the selected categoryId to fetch only menu items belonging to that category, optimizing database queries.</li>
+        <li><strong>Price and Stock Filtering</strong>: Allows filtering menu items within specific price and stock ranges, giving admins flexible search capabilities.</li>
+        <li><strong>Sorting Options</strong>: Supports sorting items by price or stock, allowing admins to organize displayed results according to their needs.</li>
+        <li><strong>Dynamic Query Handling</strong>: Constructs API calls efficiently by excluding empty filters, optimizing backend request performance and reducing unnecessary data retrieval.</li>
+        <li><strong>Real-Time Updates</strong>: The applyFilters function processes input from form fields and dynamically updates displayed menu items, ensuring the UI reflects current filter selections instantly.</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🧪 CI/CD Pipeline & Automated Testing</h3>
+      <p>I implemented a proper CI/CD pipeline using GitHub Actions, which automated the testing and deployment process. The pipeline ensured code quality and system reliability through automated testing.</p>
+      <ul>
+        <li><strong>GitHub Actions Workflow</strong>: Created a structured CI/CD pipeline that automated testing and deployment. Every commit triggered automated testing, and if tests failed, deployment was halted to ensure only stable code was deployed.</li>
+        <li><strong>Automated Testing with Playwright</strong>: Implemented comprehensive test cases including:
+          <ul style="margin-top: 10px; padding-left: 20px;">
+            <li>Admin Menu Management Tests (page loading, add/edit/delete menu items)</li>
+            <li>User Authentication Tests (login, admin redirection, error handling)</li>
+            <li>User Registration Tests (account creation, duplicate validation)</li>
+          </ul>
+        </li>
+        <li><strong>Containerized Testing</strong>: Standardized test execution using containerized Playwright testing to ensure consistent results across different environments.</li>
+        <li><strong>Database Transaction Management</strong>: Implemented database transaction rollbacks in test cases to handle inconsistent database states and ensure test reliability.</li>
+        <li><strong>Azure Deployment</strong>: The application was deployed to Azure App Service, ensuring high availability. Environment variables were securely managed using GitHub Secrets.</li>
+        <li><strong>GitHub Flow</strong>: Followed best practices with feature branches, pull requests, and code reviews before merging to main branch.</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>📸 Image Upload with Multer</h3>
+      <p>I implemented image upload functionality using Multer, which allowed seamless integration of delivery confirmation images and menu item photos into the system.</p>
+      <ul>
+        <li><strong>Menu Item Images</strong>: Admins can upload and update photos for menu items, improving the visual representation of the menu and enhancing user experience.</li>
+        <li><strong>Delivery Confirmation Images</strong>: When deliveries are completed, admins can upload images showing where the order was placed, providing visual confirmation to customers.</li>
+        <li><strong>Asynchronous Handling</strong>: Managed asynchronous image uploads effectively, ensuring smooth user experience during file uploads.</li>
+        <li><strong>File Management</strong>: Implemented proper file storage and retrieval, ensuring images are properly associated with menu items and delivery orders.</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>💡 Reflection & Learning</h3>
+      <p>Throughout this project, I gained valuable hands-on experience in full-stack development, CI/CD implementation, and state management.</p>
+      <ul>
+        <li><strong>Key Learnings</strong>: 
+          <ul style="margin-top: 10px; padding-left: 20px;">
+            <li>Gained deeper knowledge of Multer for image handling, state management, and automated CI/CD workflows</li>
+            <li>Learned how to efficiently troubleshoot server-side and client-side issues, ensuring smooth deployment</li>
+            <li>Implemented features like real-time order tracking, improving engagement and customer satisfaction</li>
+            <li>Overcame challenges with containerization using Docker and GitHub Actions automation</li>
+          </ul>
+        </li>
+        <li><strong>Challenges Overcome</strong>:
+          <ul style="margin-top: 10px; padding-left: 20px;">
+            <li>Faced difficulties learning Multer and handling asynchronous image uploads, which required persistence and research</li>
+            <li>Encountered unexpected failures in CI/CD pipelines, requiring extensive debugging and multiple iterations to resolve</li>
+            <li>Managing delivery order states dynamically was challenging, requiring multiple API calls to ensure real-time updates</li>
+            <li>Some features required more time for refinement, making it difficult to balance feature completion and code optimization</li>
+          </ul>
+        </li>
+        <li><strong>Outcome</strong>: Despite these challenges, overcoming them provided me with a well-rounded understanding of software deployment, testing, and performance optimization. This experience has strengthened my confidence in tackling real-world full-stack projects with a structured and scalable approach.</li>
+      </ul>
+    </div>
+
   </div>
 
   <!-- External JS -->
@@ -78,4 +227,3 @@
 
 </body>
 </html>
-

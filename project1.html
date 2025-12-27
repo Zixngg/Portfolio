@@ -25,7 +25,7 @@
     <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
       <div style="flex: 1; min-width: 300px;">
         <h1 class="section-title">Gamified Sustainability Task Tracker</h1>
-        <p class="section-desc">A full-stack web application designed to gamify eco-friendly habits.</p>
+        <p class="section-desc">I built a full-stack web application that gamifies eco-friendly habits.</p>
       </div>
       <div style="flex-shrink: 0;">
         <a href="https://github.com/ST0503-BED/bed-ca2-Zixngg.git" target="_blank" class="github-link">
@@ -38,11 +38,24 @@
     </div>
 
     <div class="project-content">
-      <p>This project involved developing a gamified task-tracking website that encourages users to adopt sustainable habits through interactive challenges and reward systems. The goal was to make environmentally friendly actions more engaging by allowing users to complete tasks, earn points, unlock creatures/items, and track their progress in a visually appealing interface.</p>
+      <p>This project involved developing a gamified task-tracking website that encourages users to adopt sustainable habits through interactive challenges and reward systems. My goal was to make environmentally friendly actions more engaging by allowing users to complete tasks, earn points, unlock creatures and items, and track their progress in a visually appealing interface.</p>
 
       <p>I implemented user authentication using JWT (JSON Web Tokens) and strengthened security through Bcrypt password hashing. Users can register, log in, view profiles, and manage in-app features securely. The platform also includes a global messaging feature, enabling users to send and receive messages using backend APIs.</p>
 
-      <p>The frontend was built using Bootstrap for responsive design, and Fetch API / Axios / jQuery for seamless frontend-backend communication. The vibrant fantasy-themed UI enhances user engagement, and the dashboard integrates inventory, creatures, rewards, and task completion data.</p>
+      <p>I built the frontend using Bootstrap for responsive design, and Fetch API, Axios, and jQuery for seamless frontend-backend communication. The vibrant mystical-themed UI enhances user engagement, and the dashboard integrates inventory, creatures, rewards, and task completion data.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>📹 Video Demonstration</h3>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/9BSBXLTFXDU" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          title="Gamified Sustainability Task Tracker - Video Demonstration">
+        </iframe>
+      </div>
     </div>
 
     <div class="project-section">
@@ -79,7 +92,7 @@
     <div class="project-section">
       <h3>🧩 Backend Architecture & Routing</h3>
       <p>The backend routes requests based on HTTP methods (GET, POST, PUT, DELETE) and endpoints. Middleware is used to compare passwords, validate tokens, handle form submissions, and manage CRUD operations (e.g., tasks, creatures, messages).</p>
-      <p>Form submissions on the frontend get processed and stored in the backend—for example, posting a message, purchasing an item, or registering/logging in.</p>
+      <p>Form submissions on the frontend get processed and stored in the backend. For example, posting a message, purchasing an item, or registering and logging in.</p>
     </div>
 
     <div class="project-section">
@@ -88,14 +101,14 @@
     </div>
 
     <div class="project-section">
-      <h3>📦 Fantasy-Themed Creatures, Items & Inventory System</h3>
+      <h3>📦 Mystical-Themed Creatures, Items & Inventory System</h3>
       <p>Users can buy creatures and items using points earned from tasks. I created multiple dynamic pages for viewing all creatures/items, viewing details of a specific creature/item, purchasing based on point validation, and updating user inventory.</p>
       <p><strong>Error handling</strong> was implemented to ensure the user is notified if they do not have enough points, a purchase succeeds, or a creature cannot be found.</p>
     </div>
 
     <div class="project-section">
       <h3>🎨 UI/UX & Visual Design</h3>
-      <p>The website uses a consistent <strong>purple fantasy theme</strong>, with the <em>Audiowide</em> font to enhance the game-like feeling. User profile sections are clearly segmented (Items vs. Creatures), forms and buttons are cleanly labelled, and messaging textbox is placed at the top for clarity. Backgrounds and component layouts follow an immersive theme.</p>
+      <p>The website uses a consistent <strong>purple mystical theme</strong>, with the <em>Audiowide</em> font to enhance the game-like feeling. User profile sections are clearly segmented (Items vs. Creatures), forms and buttons are cleanly labelled, and messaging textbox is placed at the top for clarity. Backgrounds and component layouts follow an immersive mystical theme.</p>
     </div>
 
     <div class="project-section">
@@ -104,7 +117,7 @@
     </div>
 
     <div class="project-section">
-      <h3>🔗 Frontend–Backend Integration</h3>
+      <h3>🔗 Frontend-Backend Integration</h3>
       <p>All interactions between pages and the server were handled through a custom <code>fetchMethod(url, method, data)</code> wrapper, supporting GET (retrieve creatures, items, messages, tasks), POST (create messages, register users, login), PUT (edit tasks/messages), and DELETE (remove creatures/messages). This enhanced scalability and minimized repeated code.</p>
     </div>
   </div>
