@@ -292,6 +292,11 @@ section {
   gap: 24px;
 }
 
+#about .work-card p {
+  padding: 8px 0;
+  line-height: 1.7;
+}
+
 /* ABOUT CONTENT */
 .about-content {
   margin: 40px 0 60px;
@@ -411,6 +416,27 @@ section {
   transition: 0.25s;
 }
 
+/* Fixed height styling for extracurricular cards only */
+#extracurriculars .work-card.clickable-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  height: 180px;
+}
+
+#extracurriculars .work-card.clickable-card h3 {
+  margin: 0 0 12px 0;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+#extracurriculars .work-card.clickable-card p {
+  margin: 0;
+  flex-grow: 1;
+  overflow: hidden;
+  line-height: 1.6;
+}
+
 .work-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 40px rgba(0,0,0,0.08);
@@ -427,8 +453,23 @@ section {
   box-shadow: 0 20px 48px rgba(255, 140, 167, 0.15);
 }
 
-.card-click-hint {
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 16px;
+  margin-bottom: 0;
+}
+
+/* Fixed footer positioning for extracurricular cards only */
+#extracurriculars .card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  flex-shrink: 0;
+  min-height: 32px;
+}
+
+.card-click-hint {
   font-size: 0.85rem;
   color: var(--accent);
   opacity: 0.7;
@@ -436,8 +477,20 @@ section {
   font-weight: 500;
 }
 
-.clickable-card:hover .card-click-hint {
+.card-year {
+  font-size: 0.85rem;
+  color: var(--accent);
+  opacity: 0.7;
+  transition: 0.25s;
+  font-weight: 500;
+}
+
+.clickable-card:hover .card-click-hint,
+.clickable-card:hover .card-year {
   opacity: 1;
+}
+
+.clickable-card:hover .card-click-hint {
   transform: translateX(4px);
 }
 
@@ -943,6 +996,19 @@ section {
 .content-modal-body strong {
   color: var(--text-dark);
   font-weight: 600;
+}
+
+.certificate-image-container {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.certificate-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border: 1px solid var(--border-light);
 }
 
 /* Responsive Styles */

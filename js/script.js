@@ -376,71 +376,113 @@ const contentData = {
     `
   },
   'socc-treasurer': {
-    title: 'SOCC Treasurer (2024-2025 April)',
+    title: 'Treasurer (2024–Present)',
     content: `
       <p><strong>School of Computing Club (SOCC), Singapore Polytechnic</strong></p>
+      <p>As the Treasurer of SOCC, I manage the financial operations of one of the largest academic clubs in the School of Computing. My role involves:</p>
       <ul>
-        <li>I manage and oversee the club's financial matters, including budgeting, expense tracking, and fund allocation for events.</li>
-        <li>I work closely with the executive committee to plan and support student engagement activities.</li>
+        <li>Preparing and maintaining budget plans for major school events and initiatives.</li>
+        <li>Ensuring transparent and responsible fund usage, including procurement, reimbursements, and event expenses.</li>
+        <li>Working closely with event directors and committee members to align financial decisions with event needs.</li>
+        <li>Supporting event planning, logistics coordination, and administrative tasks.</li>
       </ul>
+      <p>Through this role, I developed strong organisational skills, gained exposure to real-world budgeting, and learned to balance financial responsibility with creativity in event execution. Being trusted with this role deepened my sense of accountability and strengthened my leadership qualities.</p>
     `
   },
   'socc-logistics': {
-    title: 'SOCC Logistics Subcommittee Member (2023)',
+    title: 'Logistics Subcommittee Member (2023)',
     content: `
       <p><strong>School of Computing Club (SOCC), Singapore Polytechnic</strong></p>
+      <p>In my first year, I joined SOCC as a Logistics Subcommittee Member, where I assisted in planning and running school-wide events such as:</p>
       <ul>
-        <li>I assisted in planning and executing event logistics using Excel and Google Sheets for inventory management, equipment preparation, and event coordination.</li>
+        <li>Annual General Meeting (AGM)</li>
+        <li>All Stars Tournament</li>
+        <li>Festival Of Fears</li>
+        <li>SOCCares</li>
+        <li>SOCC Freshmen Orientation Camp</li>
       </ul>
+      <p>My responsibilities included:</p>
+      <ul>
+        <li>Managing and preparing logistics using Microsoft Excel and Google Sheets.</li>
+        <li>Coordinating equipment setup, venue preparation, and event flow on the day itself.</li>
+        <li>Collaborating with student leaders and volunteers to ensure smooth execution.</li>
+        <li>Troubleshooting last-minute issues and supporting participants on-site.</li>
+      </ul>
+      <p>This experience taught me the importance of teamwork, efficiency under pressure, and maintaining a positive attitude when handling large groups of students.</p>
     `
   },
   'school-ambassador': {
-    title: 'Certificate of Appreciation - School Ambassador (2024)',
+    title: 'School Ambassador – Certificate of Appreciation (2024)',
     content: `
-      <ul>
-        <li>I was awarded this certificate by the School of Computing, Singapore Polytechnic, in recognition of my outstanding contributions as a School Ambassador.</li> 
-        <li>I supported outreach events and represented the school to prospective students.</li>
-      <ul>
+      <p><strong>Period: 2024</strong></p>
+      <p>Recognised for representing the School of Computing in outreach events and supporting prospective students during campus programmes.</p>
+      <div class="certificate-image-container">
+        <img src="images/extracurriculars/sch_am.jpg" alt="School Ambassador Certificate of Appreciation" class="certificate-image" onerror="this.style.display='none'" />
+      </div>
     `
   },
   'sp-cares': {
-    title: 'SP CARES Food Donation Drive',
+    title: 'SP CARES Food Donation Drive — Student Volunteer',
     content: `
-      <p><strong>Singapore Polytechnic | Student Volunteer</strong></p>
-      <ul>
-        <li>I donated food items and contributed to SP's campus-wide initiative supporting families and individuals in need.</li>
-        <li>This experience helped me develop a deeper appreciation for community support and social responsibility.</li>
-      </ul>
+      <p><strong>Singapore Polytechnic</strong></p>
+      <p><strong>Period: 2023–2025</strong></p>
+      <p>I contributed to the SP CARES campus-wide food donation initiative by donating food items and supporting the collection efforts. This experience deepened my understanding of the importance of community solidarity and reinforced my commitment to helping those in need. It also gave me insight into how small individual contributions can collectively make a meaningful difference.</p>
     `
   },
   'touch-community': {
-    title: 'TOUCH Community Services - Meals on Wheels',
+    title: 'Meals on Wheels (TOUCH Community Services) — Student Volunteer',
     content: `
-      <p><strong>Student Volunteer</strong></p>
+      <p><strong>Period: 2024</strong></p>
+      <p>Through the Meals on Wheels programme, I delivered food door-to-door to elderly residents in the Bukit Panjang area. This experience allowed me to:</p>
       <ul>
-        <li>I delivered meals to elderly residents in Bukit Panjang through a door-to-door outreach programme.</li>
-        <li>Interacting with seniors helped me gain a better understanding of empathy, inclusiveness, and the importance of community care.</li>
+        <li>Interact with seniors who may have limited mobility or social support.</li>
+        <li>Gain a deeper appreciation for inclusivity and compassion within the community.</li>
+        <li>Understand the value of providing not only meals but also human connection.</li>
       </ul>
+      <p>This volunteer work taught me patience, empathy, and the importance of giving back to vulnerable groups.</p>
     `
   },
   'foodnotes': {
-    title: 'Bukit Panjang Youth Network - FoodNotes 2023 (PAYM)',
+    title: 'FoodNotes 2023 — PAYM Bukit Panjang Youth Network',
     content: `
       <p><strong>Student Volunteer</strong></p>
+      <p><strong>Period: 2023</strong></p>
+      <p>In this community initiative, I participated in collecting and packing donated food items for distribution to families and individuals in need. Working alongside youth volunteers, I strengthened my:</p>
       <ul>
-        <li>I supported food-collection activities by gathering donated items from residents and preparing them for distribution.</li>
-        <li>This experience strengthened my teamwork and communication skills through collaboration with other youth volunteers.</li>
+        <li>Collaboration skills, through coordinated door-to-door collection.</li>
+        <li>Sense of community responsibility, seeing firsthand how local initiatives support residents.</li>
+        <li>Ability to work efficiently, especially in sorting, packing, and categorising donations.</li>
       </ul>
+      <p>This event reinforced my desire to stay involved in community outreach programmes.</p>
     `
   },
   'sparkletots': {
-    title: 'PCF Sparkletots - Children\'s Day Event',
+    title: 'PCF Sparkletots Children\'s Day Event (Welfare Services Club) — Student Volunteer',
     content: `
-      <p><strong>Welfare Services Club | Student Volunteer</strong></p>
+      <p><strong>Period: 2023</strong></p>
+      <p>During this event, I supported the PCF Sparkletots Children's Day celebration by leading games, engaging with children, and helping create a fun learning environment. I learned to:</p>
       <ul>
-        <li>I engaged young children through games and activities designed to create a joyful and memorable Children's Day.</li>
-        <li>This experience helped me develop interpersonal and communication skills while contributing to a fun learning environment.</li>
+        <li>Communicate effectively with younger children.</li>
+        <li>Be patient, encouraging, and energetic when facilitating activities.</li>
+        <li>Adapt quickly to maintain a positive and safe environment for all participants.</li>
       </ul>
+      <p>This experience improved my interpersonal skills and allowed me to contribute to a joyful and memorable day for the children.</p>
+    `
+  },
+  'sp-netball': {
+    title: 'SP Netball — Co-Curricular Activity (CCA)',
+    content: `
+      <p><strong>Member, Singapore Polytechnic Netball Team</strong></p>
+      <p><strong>Period: 2023–2024</strong></p>
+      <p>Netball has played an important role in my personal development, both during secondary school and in polytechnic. As a committed member of SP Netball, I consistently attended training sessions, participated in team drills, and worked closely with my teammates to improve our performance and cohesion.</p>
+      <p>My experience in SP Netball helped me:</p>
+      <ul>
+        <li>Strengthen my teamwork, communication, and trust-building abilities.</li>
+        <li>Improve my discipline, time management, and resilience by balancing academic workload with rigorous training.</li>
+        <li>Maintain a strong sense of commitment and perseverance, especially during intensive training periods.</li>
+        <li>Continuously develop my athletic skills while contributing to a supportive and inclusive team environment.</li>
+      </ul>
+      <p>Being part of SP Netball has shaped me into a more driven and collaborative individual, and it remains one of the CCAs that strengthened both my character and work ethic.</p>
     `
   }
 };
