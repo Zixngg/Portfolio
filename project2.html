@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mini Student System – Portfolio</title>
+  <title>Mini Student Management System – Portfolio</title>
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
@@ -22,60 +22,104 @@
       Back
     </a>
     
-    <div class="section-header">
-      <h1 class="section-title">Mini Student System</h1>
-      <p class="section-desc">I created a Java Swing application to manage student information with search and CRUD functionality.</p>
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <h1 class="section-title">Mini Student Management System</h1>
+        <p class="section-desc">A robust Java-based Student Management System featuring file I/O, object-oriented architecture, and a complete graphical user interface with student navigation, searching, GPA calculations, and admin functionalities.</p>
+      </div>
     </div>
 
     <div class="project-content">
-      <p>For this Java Programming module project, my team and I enhanced an existing Mini Student System by building a more robust and user-friendly Java Swing GUI. The system allows users to display, search, add, and delete students and their module records, making it a functional student information management tool.</p>
+      <p>This project involved developing a comprehensive student management system using Java OOP, Swing GUI, and file I/O. The system simulates a real student information platform capable of displaying student profiles, navigating modules, searching by name or class, computing GPA, and managing student records with data persistence.</p>
 
-      <p>I designed and implemented the GUI using components like JLabel, JTextField, JButton, and JCheckBox, ensuring clear navigation and ease of use. Key features include:</p>
+      <p>I designed the application using object-oriented principles, creating a Module class to store module code, name, credit units, and marks, and a Student class to store class, admin number, student name, GPA, and an array of modules. The StudentManagement class manages all student operations, providing a clean separation of concerns and maintainable code structure.</p>
 
+      <p>I built an intuitive Java Swing GUI interface using JLabel, JTextField, JTextArea, JButton, and other Swing components. The interface allows users to switch between students and modules easily, with panels updating dynamically based on user actions. Users can display all students on program start, navigate between students using Previous/Next buttons, navigate between modules for each student, and search by class or name to load specific student records.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>🎯 Core Features</h3>
+      <p>The system provides comprehensive functionality for managing student information:</p>
       <ul>
-        <li>Searching for students by class or name</li>
-        <li>Displaying GPA calculations and module statistics</li>
-        <li>Managing student and module records with validation</li>
-        <li>Error handling for missing or invalid inputs</li>
+        <li>Display all students with their profiles, modules, and GPA</li>
+        <li>Navigate between students and their modules</li>
+        <li>Search by name or class with validation</li>
+        <li>Compute GPA using official GPA weighting formulas</li>
+        <li>Create, update, and delete student records</li>
+        <li>Add modules to existing students dynamically</li>
+        <li>Save and retrieve data using text file I/O for data persistence</li>
+        <li>Class statistics showing number of students and average GPA</li>
       </ul>
+    </div>
 
-      <p>Additionally, I implemented file I/O operations, enabling the application to read and store student data in text files, ensuring persistence across sessions.</p>
+    <div class="project-section">
+      <h3>🖥️ GUI Application Features</h3>
+      <p>I expanded the base system into a full Java Swing GUI application with comprehensive admin functionalities and file I/O support.</p>
+
+      <div style="background: var(--card-bg); padding: 20px; border-radius: 12px; margin-top: 16px; border: 1px solid var(--border-light);">
+        <h4 style="margin-top: 0; margin-bottom: 12px; color: var(--accent);">User Functions</h4>
+        <ul style="margin-bottom: 20px;">
+          <li>Display all students on program start</li>
+          <li>Navigate between students (Previous / Next buttons)</li>
+          <li>Navigate between modules for each student</li>
+          <li>Search by class → loads first student + class statistics</li>
+          <li>Search by name → loads exact student record</li>
+          <li>Exit button with thank-you message</li>
+        </ul>
+
+        <h4 style="margin-top: 20px; margin-bottom: 12px; color: var(--accent);">Admin Functions</h4>
+        <ul>
+          <li><strong>Create New Student</strong>: Enter name, admin number, class, and add modules dynamically</li>
+          <li><strong>Add Modules to Existing Student</strong>: Search by name or admin number and append new module(s)</li>
+          <li><strong>Delete Student</strong>: Search for student and remove from array with validation and feedback</li>
+          <li><strong>Save to File on Exit</strong>: Write all student and module data to students.txt for data persistence across sessions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h3>🏗️ Object-Oriented Architecture</h3>
+      <p>The system is built using object-oriented programming principles with a well-structured class hierarchy:</p>
+      <ul>
+        <li><strong>Module Class</strong>: Stores module code, name, credit units, and marks</li>
+        <li><strong>Student Class</strong>: Stores class, admin number, student name, GPA, and an array of modules</li>
+        <li><strong>StudentManagement Class</strong>: Manages all student operations including search, CRUD operations, and data management</li>
+        <li><strong>Main Program</strong>: Handles user interaction and coordinates between GUI components and data management</li>
+      </ul>
+      <p>This architecture ensures code reusability, maintainability, and follows OOP principles such as encapsulation, inheritance, and polymorphism.</p>
     </div>
 
     <div class="project-section">
       <h3>Key Features & Technologies</h3>
       <ul>
-        <li>Java Swing GUI design</li>
-        <li>CRUD operations for student & module data</li>
-        <li>Search functionalities (by class or name)</li>
-        <li>Text file I/O for persistent storage</li>
-        <li>Object-oriented programming & data encapsulation</li>
+        <li>Object-oriented programming (OOP) with classes and inheritance</li>
+        <li>Java Swing GUI development</li>
+        <li>File I/O operations for data persistence</li>
+        <li>Array management and multi-object data structures</li>
+        <li>GPA calculation using official weighting formulas</li>
+        <li>CRUD operations (Create, Read, Update, Delete)</li>
+        <li>Search functionality (by name and class)</li>
+        <li>Event-driven programming</li>
+        <li>Input validation and error handling</li>
       </ul>
     </div>
 
     <div class="project-section">
       <h3>Skills Developed</h3>
       <ul>
-        <li>OOP design & problem-solving</li>
-        <li>GUI development and layout design</li>
+        <li>Object-oriented design and implementation</li>
+        <li>Java Swing GUI development and layout design</li>
         <li>File handling and data persistence</li>
-        <li>Team collaboration and version control</li>
+        <li>Method decomposition and code organization</li>
+        <li>Array manipulation and multi-dimensional data structures</li>
+        <li>Event-driven programming patterns</li>
+        <li>Input validation and error handling</li>
+        <li>User interface design and usability</li>
+        <li>Problem-solving with OOP principles</li>
       </ul>
     </div>
 
-    <div class="project-try-section">
-      <h3>Try the Project</h3>
-      <p>Experience the Mini Student System below:</p>
-      <div class="project-embed" id="project-embed">
-        <!-- Project will be embedded here -->
-        <p>Project embed will appear here. You can add an iframe or embed code for your live project.</p>
-      </div>
-    </div>
   </div>
-
-  <!-- External JS -->
-  <script src="js/script.js"></script>
 
 </body>
 </html>
-

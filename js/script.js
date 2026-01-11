@@ -510,7 +510,7 @@ function closeContentModal() {
 
 // SECTION INDICATOR FUNCTIONALITY
 function initSectionIndicator() {
-  const sections = document.querySelectorAll('section[id]');
+  const sections = document.querySelectorAll('section[id], footer[id]');
   const indicators = document.querySelectorAll('.section-indicator-dot');
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
   
