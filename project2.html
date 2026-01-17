@@ -25,7 +25,6 @@
     <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
       <div style="flex: 1; min-width: 300px;">
         <h1 class="section-title">Mini Student Management System</h1>
-        <p class="section-desc">A robust Java-based Student Management System featuring file I/O, object-oriented architecture, and a complete graphical user interface with student navigation, searching, GPA calculations, and admin functionalities.</p>
       </div>
     </div>
 
@@ -50,6 +49,9 @@
         <li>Save and retrieve data using text file I/O for data persistence</li>
         <li>Class statistics showing number of students and average GPA</li>
       </ul>
+      <div style="margin: 40px 0; text-align: center;">
+        <img src="images/projects/project2.png" alt="Mini Student Management System" style="width: 100%; max-width: 800px; height: auto; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 0 auto; display: block;" />
+      </div>
     </div>
 
     <div class="project-section">
@@ -120,6 +122,33 @@
     </div>
 
   </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <script>
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 
 </body>
 </html>

@@ -409,6 +409,12 @@ section {
   gap: 32px;
 }
 
+/* Projects section: 2 cards per row */
+#projects .work-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
 .work-card {
   background: var(--card-bg);
   padding: 22px;
@@ -497,7 +503,7 @@ section {
 }
 
 .work-thumb {
-  height: 160px;
+  height: 200px;
   border-radius: 16px;
   background: linear-gradient(135deg, #ffeef2, #f2f8ff);
   margin-bottom: 16px;
@@ -1105,6 +1111,10 @@ section {
     gap: 20px;
   }
 
+  /* Projects section: 1 card per row on mobile */
+  #projects .work-grid {
+    grid-template-columns: 1fr;
+  }
 
   /* Modal adjustments */
   .project-modal-content {

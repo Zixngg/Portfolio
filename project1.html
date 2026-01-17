@@ -25,7 +25,6 @@
     <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
       <div style="flex: 1; min-width: 300px;">
         <h1 class="section-title">Gamified Sustainability Task Tracker</h1>
-        <p class="section-desc">I built a full-stack web application that gamifies eco-friendly habits.</p>
       </div>
       <div style="flex-shrink: 0;">
         <a href="https://github.com/ST0503-BED/bed-ca2-Zixngg.git" target="_blank" class="github-link">
@@ -122,8 +121,34 @@
     </div>
   </div>
 
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
   <!-- External JS -->
   <script src="js/script.js"></script>
+  <script>
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 
 </body>
 </html>

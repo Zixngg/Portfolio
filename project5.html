@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Commerce Database & Web Application – Portfolio</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/project-detail.css" />
+</head>
+<body>
+
+  <div class="project-detail-container">
+    <a href="index.html#projects" class="back-button" aria-label="Back to projects">
+      <svg viewBox="0 0 1024 1024">
+        <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path>
+        <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path>
+      </svg>
+      Back
+    </a>
+    
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <h1 class="section-title">E-Commerce Database & Web Application</h1>
+      </div>
+      <div style="flex-shrink: 0; display: flex; flex-direction: column; gap: 12px;">
+        <a href="https://github.com/soc-DBS/dbs-assignment-Zixngg.git" target="_blank" class="github-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          View Code on GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="project-content">
+      <p>This project involved designing and implementing a full-stack e-commerce system with a strong emphasis on database design, performance optimisation, and transaction management. I extended an existing web application by building robust backend features that support real-world shopping workflows such as cart management, checkout processing, promotions, and order tracking.</p>
+
+      <p>The system was designed to be scalable, secure, and efficient, reflecting how modern e-commerce platforms manage data consistency and user interactions. Built using PostgreSQL as the database management system, I focused on translating business requirements into structured database solutions while building end-to-end features that integrate database, backend, and frontend layers.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>📊 Database Schema Design</h3>
+      <p>The database schema was designed with normalisation principles to support core e-commerce operations. The Entity-Relationship Diagram (ERD) below illustrates the complete database structure:</p>
+      <img src="images/projects/project5_erd.png" alt="E-Commerce Database ERD" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 20px;" onerror="this.style.display='none';" />
+      <p style="margin-top: 16px;">The schema includes entities for members, products, suppliers, shopping carts, sale orders, promotions, and reviews, with carefully defined relationships to maintain data integrity and support efficient querying.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>🔧 What I Built & Implemented</h3>
+      
+      <h4 style="margin-top: 24px; margin-bottom: 12px; color: var(--accent);">1. Database Design & Entity Modelling</h4>
+      <p>I designed and implemented a normalised relational database schema to support core e-commerce operations. This included entities such as:</p>
+      <ul>
+        <li>Members and roles</li>
+        <li>Products and suppliers</li>
+        <li>Shopping carts</li>
+        <li>Sale orders and order items</li>
+        <li>Promotions and reviews</li>
+      </ul>
+      <p>I carefully defined primary keys, foreign keys, constraints, and relationships to maintain data integrity and reduce redundancy. The database was built using PostgreSQL, and Prisma ORM was used to manage schema migrations and enforce consistency between the database and application logic.</p>
+
+      <h4 style="margin-top: 24px; margin-bottom: 12px; color: var(--accent);">2. Shopping Cart Management (CRUD Operations)</h4>
+      <p>I implemented complete CRUD functionality for shopping carts:</p>
+      <ul>
+        <li>Add single or multiple products to a cart</li>
+        <li>Update item quantities (including bulk updates)</li>
+        <li>Remove individual or multiple items</li>
+        <li>Retrieve cart contents with a real-time cart summary</li>
+      </ul>
+      <p>All cart operations were member-scoped, ensuring users could only access and modify their own data. Backend validation and error handling were implemented to prevent invalid updates and ensure a smooth user experience.</p>
+
+      <h4 style="margin-top: 24px; margin-bottom: 12px; color: var(--accent);">3. Checkout & Transaction Management</h4>
+      <p>To simulate real-world checkout behaviour, I developed a stored procedure (<code>place_orders</code>) that processes cart items within a controlled transaction:</p>
+      <ul>
+        <li>Deducts stock only when sufficient inventory is available</li>
+        <li>Creates sale orders and sale order items</li>
+        <li>Removes successfully processed items from the cart</li>
+        <li>Returns a list of items that could not be processed due to insufficient stock</li>
+      </ul>
+      <p>The procedure was designed to avoid full transaction rollback, allowing partially successful checkouts—mirroring real commercial systems. I also implemented transaction anomaly testing to demonstrate a phantom read, showcasing my understanding of isolation levels and concurrency issues.</p>
+
+      <h4 style="margin-top: 24px; margin-bottom: 12px; color: var(--accent);">4. Promotions & Dynamic Pricing</h4>
+      <p>I added a promotions feature that allows products to have time-based discounts. During cart retrieval:</p>
+      <ul>
+        <li>Active promotions are automatically applied</li>
+        <li>Discounted prices are calculated server-side</li>
+        <li>Cart summaries reflect total quantity, total price, and total discount</li>
+      </ul>
+      <p>This demonstrated my ability to implement business logic at the backend level while keeping the frontend lightweight.</p>
+
+      <h4 style="margin-top: 24px; margin-bottom: 12px; color: var(--accent);">5. Admin Sale Order Dashboard</h4>
+      <p>For administrators, I built a sale order dashboard that supports:</p>
+      <ul>
+        <li>Searching and filtering by order status, date range, item quantity, and price</li>
+        <li>Sorting results by earliest or latest orders</li>
+        <li>Viewing detailed order and product information</li>
+      </ul>
+      <p>All filtering and sorting logic was implemented using ORM-based queries, ensuring maintainable and secure database access.</p>
+
+      <h4 style="margin-top: 24px; margin-bottom: 12px; color: var(--accent);">6. Query Optimisation & Indexing</h4>
+      <p>To improve database performance, I analysed common supplier queries and implemented multiple indexes, including:</p>
+      <ul>
+        <li>Single-column indexes (e.g. country, company name)</li>
+        <li>Composite indexes (e.g. country + active status)</li>
+      </ul>
+      <p>I measured query execution times before and after indexing, demonstrating tangible performance improvements and reinforcing my understanding of query optimisation strategies.</p>
+    
+      <div style="margin: 30px 0; text-align: center;">
+        <img src="images/projects/project5.png" alt="E-Commerce Database & Web Application" style="width: 100%; max-width: 800px; height: auto; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 0 auto; display: block;" />
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h3>💡 Key Technical Skills Demonstrated</h3>
+      <ul>
+        <li>Relational Database Design & Normalisation</li>
+        <li>PostgreSQL Database Management</li>
+        <li>SQL & Stored Procedures</li>
+        <li>Transaction Management & Concurrency Control</li>
+        <li>Prisma ORM & Schema Migrations</li>
+        <li>Backend Development (Node.js, Express)</li>
+        <li>RESTful API Design</li>
+        <li>Performance Optimisation & Indexing</li>
+        <li>Error Handling & Validation</li>
+        <li>Frontend Integration with Backend APIs</li>
+        <li>Git & Version Control</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🎯 What This Project Shows About Me</h3>
+      <p>This project highlights my ability to:</p>
+      <ul>
+        <li>Translate business requirements into structured database solutions</li>
+        <li>Build end-to-end features that integrate database, backend, and frontend layers</li>
+        <li>Think critically about data integrity, performance, and real-world edge cases</li>
+        <li>Apply academic concepts to practical, industry-relevant systems</li>
+      </ul>
+      <p>It reflects my strong interest in backend development, data engineering, and system design, and my commitment to writing clean, maintainable, and scalable code.</p>
+    </div>
+
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <script>
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+</body>
+</html>
+

@@ -25,7 +25,6 @@
     <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
       <div style="flex: 1; min-width: 300px;">
         <h1 class="section-title">Eco Garden - AI Powered Sustainability Minigame</h1>
-        <p class="section-desc">An AI-powered sustainability minigame built for CloudHacks 2024 hackathon, featuring user authentication, leaderboards, posts, and an interactive game powered by Google Gemini AI.</p>
       </div>
       <div style="flex-shrink: 0; display: flex; flex-direction: column; gap: 12px;">
         <a href="https://github.com/ryrxin/eco-garden" target="_blank" class="github-link">
@@ -34,6 +33,12 @@
           </svg>
           View Code on GitHub
         </a>
+        <button class="certificate-link" onclick="openCertificateModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+          </svg>
+          View Certificate
+        </button>
       </div>
     </div>
 
@@ -102,6 +107,9 @@
         <li><strong>Social Posts</strong>: Community feature allowing users to create and share posts about sustainability topics, fostering engagement and discussion.</li>
         <li><strong>Leaderboards</strong>: Competitive element that displays top performers, encouraging users to improve their sustainability scores and engage more with the platform.</li>
       </ul>
+      <div style="margin: 40px 0; text-align: center;">
+        <img src="images/projects/project4.png" alt="Eco Garden - AI Powered Sustainability Minigame" style="width: 100%; max-width: 800px; height: auto; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 0 auto; display: block;" />
+      </div>
     </div>
 
     <div class="project-section">
@@ -129,6 +137,73 @@
     </div>
 
   </div>
+
+  <!-- Certificate Modal -->
+  <div id="certificateModal" class="certificate-modal">
+    <div class="certificate-modal-content">
+      <span class="certificate-modal-close" onclick="closeCertificateModal()">
+        <span>&times;</span>
+      </span>
+      <div class="certificate-modal-body">
+        <img src="images/projects/project4_cert.png" alt="CloudHacks 2024 Participation Certificate" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openCertificateModal() {
+      const modal = document.getElementById('certificateModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCertificateModal() {
+      const modal = document.getElementById('certificateModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal when clicking outside the content
+    document.getElementById('certificateModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeCertificateModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeCertificateModal();
+      }
+    });
+  </script>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <script>
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 
 </body>
 </html>

@@ -25,7 +25,6 @@
     <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
       <div style="flex: 1; min-width: 300px;">
         <h1 class="section-title">Restaurant Management System</h1>
-        <p class="section-desc">A full-stack web application with CI/CD pipeline implementation, featuring admin menu management, real-time delivery tracking, and automated testing.</p>
       </div>
       <div style="flex-shrink: 0; display: flex; flex-direction: column; gap: 12px;">
         <a href="https://github.com/soc-cicd/ay2425s2-project-class-2a22-group-4" target="_blank" class="github-link">
@@ -222,8 +221,34 @@
 
   </div>
 
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
   <!-- External JS -->
   <script src="js/script.js"></script>
+  <script>
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 
 </body>
 </html>
