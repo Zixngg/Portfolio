@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Transcription & Translation Support for Videotto – Portfolio</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/project-detail.css" />
+</head>
+<body>
+
+  <div class="project-detail-container">
+    <a href="index.html#projects" class="back-button" aria-label="Back to projects">
+      <svg viewBox="0 0 1024 1024">
+        <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path>
+        <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path>
+      </svg>
+      Back
+    </a>
+    
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <h1 class="section-title">AI Transcription & Translation Support for Videotto</h1>
+      </div>
+    </div>
+
+    <div class="project-content">
+      <p>I assisted a friend in developing AI-powered transcription and translation features for Videotto, an AI-based video editing service. The platform focuses on automating video post-production workflows, where speech-to-text transcription and multilingual translation play a key role in enabling subtitles, content repurposing, and accessibility.</p>
+
+      <p>My contributions focused on Chinese-language transcription, English-to-Chinese translation support, and integration guidance, helping ensure the AI outputs were accurate, usable, and suitable for real-world video editing scenarios.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>🔧 My Contributions</h3>
+      
+      <h4 style="margin-top: 24px; margin-bottom: 12px; color: var(--accent);">Chinese Speech-to-Text Support</h4>
+      <p>I helped research and evaluate AI transcription approaches for Mandarin Chinese, taking into account:</p>
+      <ul>
+        <li>Tonal language accuracy</li>
+        <li>Sentence segmentation and punctuation</li>
+        <li>Handling continuous speech and varied speaking speeds</li>
+        <li>Suitability for subtitle and caption generation</li>
+      </ul>
+      <p>This ensured that the transcription output could be reliably used for editing and subtitle workflows.</p>
+
+      <h4 style="margin-top: 24px; margin-bottom: 12px; color: var(--accent);">English to Chinese Translation Integration</h4>
+      <p>In addition to transcription, I assisted with English-to-Chinese translation workflows, enabling:</p>
+      <ul>
+        <li>Automatic translation of English transcripts into Chinese subtitles</li>
+        <li>Multilingual content support for a wider audience</li>
+        <li>Faster turnaround for creators producing bilingual or Chinese-language content</li>
+      </ul>
+      <p>I helped assess translation quality and identify common issues such as mistranslations, unnatural phrasing, and context loss, ensuring outputs were more natural and audience-appropriate.</p>
+
+      <h4 style="margin-top: 24px; margin-bottom: 12px; color: var(--accent);">Integration & Workflow Design Support</h4>
+      <p>I supported the overall AI integration by:</p>
+      <ul>
+        <li>Advising on how transcription and translation outputs could be structured for frontend use</li>
+        <li>Helping design workflows where text outputs could be reused for subtitles, captions, and content editing</li>
+        <li>Identifying edge cases such as timing alignment, filler words, and translation consistency</li>
+      </ul>
+      <p>This helped ensure the AI features fit smoothly into Videotto's broader editing pipeline.</p>
+
+      <h4 style="margin-top: 24px; margin-bottom: 12px; color: var(--accent);">Testing & Iteration</h4>
+      <p>I contributed by:</p>
+      <ul>
+        <li>Testing transcription and translation accuracy across different video types</li>
+        <li>Providing feedback on errors related to pronunciation, pacing, and translation quality</li>
+        <li>Assisting with iterative improvements to improve reliability and usability</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>💡 Technical Skills Demonstrated</h3>
+      <ul>
+        <li>AI Speech-to-Text Concepts</li>
+        <li>English–Chinese Machine Translation</li>
+        <li>Multilingual AI Workflow Design</li>
+        <li>Natural Language Processing (Applied)</li>
+        <li>Testing & Quality Evaluation</li>
+        <li>AI Integration for Media Applications</li>
+        <li>Collaborative Development in a Startup-Style Environment</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🎯 Key Takeaways</h3>
+      <ul>
+        <li>Gained hands-on experience with AI-powered Chinese transcription and English–Chinese translation in a real-world video editing platform.</li>
+        <li>Learned to evaluate and refine multilingual AI outputs for accuracy, context, and usability.</li>
+        <li>Understood how AI features integrate into end-to-end product workflows, not just standalone models.</li>
+        <li>Strengthened collaboration skills in a startup-style development environment.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <script>
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+</body>
+</html>
+
