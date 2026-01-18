@@ -1,22 +1,3 @@
-const bg = document.querySelector('.bubble-bg');
-
-for (let i = 0; i < 15; i++) {
-  const b = document.createElement('div');
-  b.className = 'bubble';
-
-  const size = Math.random() * 100 + 60;
-  b.style.width = size + 'px';
-  b.style.height = size + 'px';
-
-  b.style.left = Math.random() * 100 + '%';
-  b.style.top = Math.random() * 100 + '%';
-
-  b.style.animationDuration = (12 + Math.random() * 8) + 's';
-  b.style.animationDelay = Math.random() * 5 + 's';
-
-  bg.appendChild(b);
-}
-
 // CAROUSEL FUNCTIONALITY
 function initCarousel(carouselElement) {
   const track = carouselElement.querySelector('.carousel-track');
