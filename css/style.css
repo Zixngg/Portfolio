@@ -157,8 +157,14 @@ header h1.hero-title {
   white-space: nowrap;
 }
 
+.hero-greeting {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
 .hero-profession {
-  font-size: 3rem;
+  font-size: 4.5rem;
   font-weight: 700;
   margin-bottom: 24px;
   line-height: 1.2;
@@ -515,6 +521,11 @@ section {
   gap: 32px;
 }
 
+#internship .work-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
 .work-card {
   background: var(--card-bg);
   padding: 22px;
@@ -623,6 +634,16 @@ section {
   display: flex;
   gap: 10px;
   margin-top: 14px;
+}
+
+#skills .tags {
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+#skills .tag {
+  width: fit-content;
 }
 
 .tag {
@@ -1124,8 +1145,12 @@ section {
     white-space: normal;
   }
 
+  .hero-greeting {
+    font-size: 1.5rem;
+  }
+
   .hero-profession {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   header p.hero-sub {
@@ -1228,6 +1253,10 @@ section {
 
   /* Projects section: 1 card per row on mobile */
   #projects .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #internship .work-grid {
     grid-template-columns: 1fr;
   }
 

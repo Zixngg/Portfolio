@@ -347,8 +347,8 @@ const contentData = {
   'about-values': {
     title: 'Values & Leadership',
     content: `
-      <p>Beyond academics, I strongly value teamwork, communication, and leadership. Having participated in team sports like Netball and Floorball, I've developed resilience, discipline, and the ability to collaborate effectively under pressure. These foundational qualities now guide how I approach group projects and technical work.</p>
-      <p>At Singapore Polytechnic, I also serve as the Treasurer of the School of Computing Club (SOCC), and I previously contributed as a Logistics Subcommittee Member. This role has strengthened my organisational and budgeting skills, and it's given me opportunities to support student events and initiatives within the School of Computing.</p>
+      <p>Beyond academics, I strongly value teamwork, communication, and leadership. Having participated in team sports like Netball, I've developed resilience, discipline, and the ability to collaborate effectively under pressure. These foundational qualities now guide how I approach group projects and technical work.</p>
+      <p>At Singapore Polytechnic, I was the Treasurer of the School of Computing Club (SOCC) from 2024–2025, and I previously contributed as a Logistics Subcommittee Member. This role strengthened my organisational and budgeting skills, and it gave me opportunities to support student events and initiatives within the School of Computing.</p>
     `
   },
   'about-aspirations': {
@@ -358,10 +358,10 @@ const contentData = {
     `
   },
   'socc-treasurer': {
-    title: 'Treasurer (2024–Present)',
+    title: 'Treasurer (2024–2025)',
     content: `
       <p><strong>School of Computing Club (SOCC), Singapore Polytechnic</strong></p>
-      <p>As the Treasurer of SOCC, I manage the financial operations of one of the largest academic clubs in the School of Computing. My role involves:</p>
+      <p>As the Treasurer of SOCC, I managed the financial operations of one of the largest academic clubs in the School of Computing. My role involved:</p>
       <ul>
         <li>Preparing and maintaining budget plans for major school events and initiatives.</li>
         <li>Ensuring transparent and responsible fund usage, including procurement, reimbursements, and event expenses.</li>

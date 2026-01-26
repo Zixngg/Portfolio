@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic QR Code Generator – Portfolio</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/project-detail.css" />
+</head>
+<body>
+
+  <div class="project-detail-container">
+    <a href="index.html#internship" class="back-button" aria-label="Back to internship">
+      <svg viewBox="0 0 1024 1024">
+        <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path>
+        <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path>
+      </svg>
+      Back
+    </a>
+    
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <h1 class="section-title">In-House Dynamic QR Code Generator + Monitoring</h1>
+      </div>
+      <div style="flex-shrink: 0; display: flex; flex-direction: column; gap: 12px;">
+        <a href="https://dynamicqr.sg-akc.com/" target="_blank" class="github-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+            <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+          Visit Website
+        </a>
+      </div>
+    </div>
+
+    <div class="project-content">
+      <p>I developed an in-house Dynamic QR Code Generator to solve a common operational problem: QR codes are often printed on posters, flyers, certificates, or marketing materials, but the destination link changes over time due to campaign updates, refreshed landing pages, or new sign-up forms. Reprinting is costly and slow, so the solution was to make QR codes "future-proof".</p>
+
+      <p>Instead of encoding a fixed external URL, the generated QR codes point to a managed redirect link. This redirect destination can be updated anytime through a management interface, allowing internal teams to keep existing printed QR codes valid while ensuring users always land on the correct updated page.</p>
+
+      <p>To support decision-making and continuous improvement, I connected this system to monitoring through dashboards (Grafana). This provided visibility into QR engagement trends such as scan volume over time and comparative performance across campaigns, helping stakeholders evaluate which outreach methods work best.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>🔑 Key Features</h3>
+      <ul>
+        <li><strong>Dynamic Redirection:</strong> Update the destination without changing the QR code, eliminating the need for reprinting when links change</li>
+        <li><strong>Central Management:</strong> Manage multiple QR codes and destinations through a unified interface</li>
+        <li><strong>Campaign Flexibility:</strong> Change links for campaigns, landing pages, or sign-up forms without physical material updates</li>
+        <li><strong>Monitoring & Reporting:</strong> Track QR engagement trends through Grafana dashboards, including scan volume over time and comparative performance across campaigns</li>
+        <li><strong>User-Friendly Design:</strong> Designed for usability by non-technical users, enabling teams to manage QR codes independently</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🔧 Technical Implementation</h3>
+      <p>I built a full-stack solution that combines QR code generation with a flexible redirect management system. The system integrates with Grafana for real-time monitoring and analytics, providing actionable insights into QR code performance.</p>
+      <ul>
+        <li>QR code generation with dynamic redirect URLs</li>
+        <li>Management interface for updating destinations</li>
+        <li>Grafana integration for monitoring and analytics</li>
+        <li>Engagement tracking and performance metrics</li>
+        <li>User-friendly interface for non-technical users</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>💡 What This Shows</h3>
+      <p>This project demonstrates end-to-end product thinking: translating a real operational pain point into a working system, ensuring it is maintainable after handover, and adding analytics so it delivers measurable value instead of being a one-time tool.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>💼 Business Impact</h3>
+      <p>The Dynamic QR Code Generator eliminated the need for costly reprinting when destination links changed, saving both time and resources. The monitoring capabilities provided valuable insights into campaign performance, enabling data-driven decisions about which outreach methods are most effective.</p>
+    </div>
+
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <!-- External JS -->
+  <script src="js/script.js"></script>
+  <script>
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+</body>
+</html>
+

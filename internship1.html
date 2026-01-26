@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Scraping Bots – Portfolio</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/project-detail.css" />
+</head>
+<body>
+
+  <div class="project-detail-container">
+    <a href="index.html#internship" class="back-button" aria-label="Back to internship">
+      <svg viewBox="0 0 1024 1024">
+        <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path>
+        <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path>
+      </svg>
+      Back
+    </a>
+    
+    <div class="section-header">
+      <h1 class="section-title">Web Scraping Bots (Python)</h1>
+    </div>
+
+    <div class="project-content">
+      <p>During my internship, I built Python web-scraping bots to speed up data collection tasks that were otherwise done through repetitive manual searching. The main goal was to automate the extraction of publicly available business information and convert it into clean, structured outputs that teams could use immediately for lead generation, research, and performance tracking.</p>
+
+      <p>One key use case was extracting company and contact-related details such as company names, websites, email formats (where publicly available), phone numbers, and other relevant identifiers from targeted sources. I designed the workflow to produce consistent Excel-style outputs so stakeholders could filter, deduplicate, and prioritise leads without spending additional time cleaning the results. I also worked on competitor-related scraping tasks (for example, collecting SEO ranking indicators) so the team could benchmark performance trends over time.</p>
+
+      <p>To make the bots practical in real conditions, I iterated on reliability and data quality: handling inconsistent page layouts, reducing duplicates, validating extracted fields, and improving how results were formatted. This project strengthened my ability to build tools that are not just technically functional, but also usable and maintainable for real business workflows.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>💡 Skills Demonstrated</h3>
+      <ul>
+        <li>Automation through coding to reduce repetitive work</li>
+        <li>Data cleaning and standardisation for downstream use</li>
+        <li>Iterative improvement for robustness and accuracy</li>
+        <li>Delivering outputs in a stakeholder-friendly format</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🎯 Key Features</h3>
+      <ul>
+        <li><strong>Company & Contact Extraction:</strong> Automated extraction of company names, websites, email formats, phone numbers, and other business identifiers from targeted sources</li>
+        <li><strong>SEO Data Collection:</strong> Scraped competitor-related SEO ranking indicators to support performance benchmarking and trend analysis</li>
+        <li><strong>Structured Output:</strong> Designed workflows to produce consistent Excel-style outputs that are immediately usable for lead generation and research</li>
+        <li><strong>Data Quality:</strong> Implemented validation, duplicate reduction, and formatting improvements to ensure reliable and clean data extraction</li>
+        <li><strong>Robustness:</strong> Handled inconsistent page layouts, missing fields, and various edge cases to ensure reliable operation in real-world conditions</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🔧 Technical Implementation</h3>
+      <p>I developed Python-based web scraping solutions that could handle various website structures and data formats. The bots were designed to be maintainable and adaptable, with error handling and validation built in to ensure data quality.</p>
+      <ul>
+        <li>Python web scraping libraries for data extraction</li>
+        <li>Data validation and cleaning processes</li>
+        <li>Excel-compatible output formatting</li>
+        <li>Error handling for inconsistent layouts and missing data</li>
+        <li>Deduplication and data standardisation logic</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>💼 Business Impact</h3>
+      <p>This project directly addressed operational inefficiencies by automating time-consuming manual data collection tasks. The structured outputs enabled teams to focus on analysis and outreach rather than data gathering, significantly improving productivity and enabling faster decision-making.</p>
+    </div>
+
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <!-- External JS -->
+  <script src="js/script.js"></script>
+  <script>
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+</body>
+</html>
+

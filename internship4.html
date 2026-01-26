@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power BI & Grafana Dashboards – Portfolio</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/project-detail.css" />
+</head>
+<body>
+
+  <div class="project-detail-container">
+    <a href="index.html#internship" class="back-button" aria-label="Back to internship">
+      <svg viewBox="0 0 1024 1024">
+        <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path>
+        <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path>
+      </svg>
+      Back
+    </a>
+    
+    <div class="section-header">
+      <h1 class="section-title">Dashboards in Power BI + Grafana</h1>
+    </div>
+
+    <div class="project-content">
+      <p>During my internship, I built multiple dashboards using Power BI and Grafana to help stakeholders monitor performance, identify trends, and make data-driven decisions faster. These dashboards replaced manual reporting workflows and improved visibility across different parts of the business.</p>
+
+      <p>In Power BI, I created structured reporting dashboards such as LSP and SSG tabulation views, as well as business-focused analytics like course profitability and MySkillsFuture market share tracking. I also built a geographic targeting dashboard to identify location-based patterns in sales and enquiries, supporting more targeted outreach and marketing decisions.</p>
+
+      <p>In Grafana, I created monitoring-style dashboards for continuous tracking, including company performance dashboards, SEO ranking tracking, and dashboards linked to internal systems such as the dynamic QR code generator. I also worked on analysing the relationship between sales and enquiries through dashboard visualisation to reveal conversion patterns and possible funnel drop-off points.</p>
+
+      <p>Across both tools, I prioritised usability and clarity: consistent layouts, meaningful filters, stakeholder-aligned metrics, and designs that support both quick checks and deeper analysis. I also supported ongoing maintenance as business needs and datasets evolved.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>💡 Skills Demonstrated</h3>
+      <ul>
+        <li>Translating stakeholder questions into measurable KPIs</li>
+        <li>Building readable, reliable dashboards for real users</li>
+        <li>Data preparation and modelling for reporting</li>
+        <li>Continuous improvement and maintenance mindset</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>📊 Power BI Dashboards</h3>
+      
+      <h4 style="font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px;">1. Structured Reporting Dashboards</h4>
+      <ul>
+        <li><strong>LSP Tabulation Views:</strong> Structured reporting for LSP-related data and metrics</li>
+        <li><strong>SSG Tabulation Views:</strong> Comprehensive views for SSG-related reporting and analysis</li>
+      </ul>
+
+      <h4 style="font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px;">2. Business Analytics Dashboards</h4>
+      <ul>
+        <li><strong>Course Profitability:</strong> Analytics dashboard tracking course profitability metrics and trends</li>
+        <li><strong>MySkillsFuture Market Share:</strong> Tracking and analysis of market share performance on MySkillsFuture platform</li>
+        <li><strong>Geographic Targeting:</strong> Dashboard identifying location-based patterns in sales and enquiries to support targeted outreach and marketing decisions</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>📈 Grafana Dashboards</h3>
+      
+      <h4 style="font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px;">1. Performance Monitoring</h4>
+      <ul>
+        <li><strong>Company Performance Dashboards:</strong> Continuous tracking of company performance metrics and KPIs</li>
+        <li><strong>SEO Ranking Tracking:</strong> Monitoring and visualisation of SEO ranking trends and indicators</li>
+      </ul>
+
+      <h4 style="font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px;">2. System Integration Dashboards</h4>
+      <ul>
+        <li><strong>Dynamic QR Code Generator Monitoring:</strong> Dashboards linked to the internal dynamic QR code system to track engagement and performance</li>
+        <li><strong>Sales & Enquiries Analysis:</strong> Visualisation of the relationship between sales and enquiries to reveal conversion patterns and identify funnel drop-off points</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🎨 Design Principles</h3>
+      <p>I prioritised usability and clarity across all dashboards:</p>
+      <ul>
+        <li><strong>Consistent Layouts:</strong> Standardised design patterns for easy navigation and familiarity</li>
+        <li><strong>Meaningful Filters:</strong> Filters aligned with stakeholder needs and common analysis scenarios</li>
+        <li><strong>Stakeholder-Aligned Metrics:</strong> KPIs and metrics that directly answer business questions</li>
+        <li><strong>Dual-Purpose Design:</strong> Dashboards supporting both quick checks and deeper analysis</li>
+        <li><strong>Maintainability:</strong> Ongoing support and updates as business needs and datasets evolve</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>💼 Business Impact</h3>
+      <p>These dashboards replaced manual reporting workflows, significantly reducing the time required for data analysis and decision-making. The improved visibility across different parts of the business enabled stakeholders to identify trends, monitor performance, and make data-driven decisions faster. The geographic targeting dashboard, in particular, supported more effective marketing and outreach strategies.</p>
+    </div>
+
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <!-- External JS -->
+  <script src="js/script.js"></script>
+  <script>
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+</body>
+</html>
+

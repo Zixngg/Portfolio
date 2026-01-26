@@ -30,7 +30,6 @@
     <a href="#projects" class="section-indicator-dot" data-section="projects" data-section-name="Projects"></a>
     <a href="#internship" class="section-indicator-dot" data-section="internship" data-section-name="Internship"></a>
     <a href="#skills" class="section-indicator-dot" data-section="skills" data-section-name="Skills"></a>
-    <a href="#footer" class="section-indicator-dot" data-section="footer" data-section-name="Contact"></a>
   </div>
 
   <!-- Page Loader -->
@@ -41,10 +40,11 @@
   <header>
     <div class="hero-container">
       <div class="hero-content">
-        <p class="hero-welcome">Welcome to my site</p>
-        <h1 class="hero-title">Hi! I am Wang Zixing</h1>
+        <h1 class="hero-title">
+          <span class="hero-greeting">Hi! I am</span>
+        </h1>
         <p class="hero-profession">
-          <span class="profession-highlight">Software Developer</span>
+          <span class="profession-highlight">Wang Zixing</span>
         </p>
         <p class="hero-sub">
           I'm a Singapore Polytechnic student who's passionate about technology, community service, and sports.
@@ -86,7 +86,7 @@
 
         <div class="work-card clickable-card" data-modal="about-values">
           <h3>🤝 Values & Leadership</h3>
-          <p>I value teamwork, communication, and leadership, which I've developed through sports and my involvement with SOCC. I'm currently the Treasurer of the School of Computing Club.</p>
+          <p>I value teamwork, communication, and leadership, which I've developed through sports and my involvement with SOCC. I was the Treasurer of the School of Computing Club from 2024–2025.</p>
           <div class="card-click-hint">Click to read more →</div>
         </div>
 
@@ -360,27 +360,61 @@
     </div>
 
     <div class="work-grid">
-      <div class="work-card">
-        <div class="work-thumb"></div>
-        <h3>AKC Internship Projects</h3>
-        <p>I worked on technical development projects, contributing to real-world solutions and gaining hands-on experience in professional software development.</p>
-        <div class="tags">
-          <div class="tag">Technical Development</div>
-          <div class="tag">Software Engineering</div>
-          <div class="tag">Professional Experience</div>
+      <a href="internship1.html" class="work-card" style="text-decoration: none; color: inherit; display: block;">
+        <div class="work-thumb">
+          <img src="images/internship/internship1.png" alt="Web Scraping Bots" onerror="this.style.display='none';" />
         </div>
-      </div>
+        <h3>Web Scraping Bots</h3>
+        <p>Developed Python web-scraping bots to extract publicly available business and marketing intelligence (company/contact details, SEO-related indicators) into structured datasets for outreach and benchmarking.</p>
+        <div class="tags">
+          <div class="tag">Python</div>
+          <div class="tag">Web Scraping</div>
+          <div class="tag">Automation</div>
+          <div class="tag">Data Extraction</div>
+        </div>
+      </a>
 
-      <div class="work-card">
-        <div class="work-thumb"></div>
-        <h3>Key Learnings</h3>
-        <p>I developed my technical skills, collaborated with professional teams, and applied my classroom knowledge to solve practical business challenges.</p>
-        <div class="tags">
-          <div class="tag">Team Collaboration</div>
-          <div class="tag">Problem Solving</div>
-          <div class="tag">Industry Practices</div>
+      <a href="internship2.html" class="work-card" style="text-decoration: none; color: inherit; display: block;">
+        <div class="work-thumb">
+          <img src="images/internship/internship2.png" alt="Dynamic QR Code Generator" onerror="this.style.display='none';" />
         </div>
-      </div>
+        <h3>Dynamic QR Code Generator + Monitoring</h3>
+        <p>Built an in-house dynamic QR code system that allows QR destinations to be updated anytime without reprinting, supported by monitoring dashboards to track QR engagement.</p>
+        <div class="tags">
+          <div class="tag">Full-Stack</div>
+          <div class="tag">QR Codes</div>
+          <div class="tag">Monitoring</div>
+          <div class="tag">Grafana</div>
+        </div>
+      </a>
+
+      <a href="internship3.html" class="work-card" style="text-decoration: none; color: inherit; display: block;">
+        <div class="work-thumb">
+          <img src="images/internship/internship3.png" alt="Power Automate Desktop Workflows" onerror="this.style.display='none';" />
+        </div>
+        <h3>Power Automate Desktop Workflow Suite</h3>
+        <p>Built a suite of Power Automate Desktop workflows to automate web searches, large-scale data extraction, lead enrichment, and competitive research, producing structured outputs while reducing manual effort.</p>
+        <div class="tags">
+          <div class="tag">Automation</div>
+          <div class="tag">Power Automate</div>
+          <div class="tag">Workflow Design</div>
+          <div class="tag">Data Extraction</div>
+        </div>
+      </a>
+
+      <a href="internship4.html" class="work-card" style="text-decoration: none; color: inherit; display: block;">
+        <div class="work-thumb">
+          <img src="images/internship/internship4.png" alt="Power BI & Grafana Dashboards" onerror="this.style.display='none';" />
+        </div>
+        <h3>Dashboards in Power BI + Grafana</h3>
+        <p>Designed and maintained dashboards in Power BI and Grafana to convert raw data into actionable insights for reporting, performance monitoring, marketing analytics, and conversion tracking.</p>
+        <div class="tags">
+          <div class="tag">Power BI</div>
+          <div class="tag">Grafana</div>
+          <div class="tag">Data Analytics</div>
+          <div class="tag">Visualization</div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -392,33 +426,93 @@
 
     <div class="capabilities">
       <div class="cap-card">
-        <h3>Technical Skills</h3>
-        <ul>
-          <li>Software Development</li>
-          <li>Programming Languages</li>
-          <li>Technical Problem Solving</li>
-          <li>Project Development</li>
-        </ul>
+        <h3>Programming Languages</h3>
+        <div class="tags">
+          <div class="tag">Java</div>
+          <div class="tag">JavaScript</div>
+          <div class="tag">Python</div>
+          <div class="tag">SQL</div>
+          <div class="tag">HTML/CSS</div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <h3>Full-Stack Development</h3>
+        <div class="tags">
+          <div class="tag">Node.js</div>
+          <div class="tag">Express.js</div>
+          <div class="tag">RESTful APIs</div>
+          <div class="tag">JWT Authentication</div>
+          <div class="tag">Database Design</div>
+          <div class="tag">Bootstrap</div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <h3>Database & Data</h3>
+        <div class="tags">
+          <div class="tag">MySQL</div>
+          <div class="tag">PostgreSQL</div>
+          <div class="tag">Prisma ORM</div>
+          <div class="tag">Query Optimization</div>
+          <div class="tag">Transaction Management</div>
+          <div class="tag">Data Modeling</div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <h3>DevOps & CI/CD</h3>
+        <div class="tags">
+          <div class="tag">GitHub Actions</div>
+          <div class="tag">Docker</div>
+          <div class="tag">Azure Deployment</div>
+          <div class="tag">Playwright</div>
+          <div class="tag">Git</div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <h3>AI & Automation</h3>
+        <div class="tags">
+          <div class="tag">Google Gemini AI</div>
+          <div class="tag">Speech-to-Text</div>
+          <div class="tag">Machine Translation</div>
+          <div class="tag">Web Scraping</div>
+          <div class="tag">Power Automate</div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <h3>Data Analytics</h3>
+        <div class="tags">
+          <div class="tag">Power BI</div>
+          <div class="tag">Grafana</div>
+          <div class="tag">Data Visualization</div>
+          <div class="tag">Performance Analytics</div>
+          <div class="tag">KPI Tracking</div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <h3>Software Engineering</h3>
+        <div class="tags">
+          <div class="tag">Agile/SCRUM</div>
+          <div class="tag">Requirements Analysis</div>
+          <div class="tag">System Design</div>
+          <div class="tag">Testing & QA</div>
+          <div class="tag">OOP</div>
+        </div>
       </div>
 
       <div class="cap-card">
         <h3>Professional Skills</h3>
-        <ul>
-          <li>Team Collaboration</li>
-          <li>Communication</li>
-          <li>Time Management</li>
-          <li>Industry Experience</li>
-        </ul>
-      </div>
-
-      <div class="cap-card">
-        <h3>Personal Attributes</h3>
-        <ul>
-          <li>Community Service</li>
-          <li>Sports & Teamwork</li>
-          <li>Leadership</li>
-          <li>Holistic Development</li>
-        </ul>
+        <div class="tags">
+          <div class="tag">Team Collaboration</div>
+          <div class="tag">Project Management</div>
+          <div class="tag">Problem Solving</div>
+          <div class="tag">Communication</div>
+          <div class="tag">Leadership</div>
+        </div>
       </div>
     </div>
   </section>

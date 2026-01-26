@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power Automate Desktop Workflows – Portfolio</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/project-detail.css" />
+</head>
+<body>
+
+  <div class="project-detail-container">
+    <a href="index.html#internship" class="back-button" aria-label="Back to internship">
+      <svg viewBox="0 0 1024 1024">
+        <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path>
+        <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path>
+      </svg>
+      Back
+    </a>
+    
+    <div class="section-header">
+      <h1 class="section-title">Power Automate Desktop Workflow Suite</h1>
+    </div>
+
+    <div class="project-content">
+      <p>I developed multiple Power Automate Desktop workflows to automate repetitive operational tasks such as web searching, data collection, and list updating. These workflows were built to replicate real user behaviour: navigating websites, applying filters, opening listings, extracting key fields, and consolidating results into standardised outputs for analysis and outreach.</p>
+
+      <p>A major set of workflows focused on collecting information from platforms like MyCareersFuture and MySkillsFuture, as well as directory-style sources, where large volumes of data needed to be gathered consistently. I also created automation for tender opportunity searches across platforms such as GeBIZ, TenderBoard, and SESAMi, allowing the team to retrieve and compile relevant results more efficiently.</p>
+
+      <p>Beyond collecting data, I also worked on data quality and enrichment. This included automation to update centralised lead lists (for example, filling missing emails where available and improving field consistency), making the dataset more complete and outreach-ready. I also built workflows for competitor benchmarking tasks such as retrieving competitor course pricing and related indicators, supporting faster comparisons without manual checks.</p>
+
+      <p>To make the automations reliable in real-world conditions, I accounted for issues like inconsistent layouts, page load delays, missing fields, and repeated entries. I focused on producing outputs that are not only collected, but also structured and usable.</p>
+    </div>
+
+    <div class="project-section">
+      <h3>💡 Skills Demonstrated</h3>
+      <ul>
+        <li>Workflow design and process automation</li>
+        <li>Handling real-world variability (delays, layout changes, incomplete data)</li>
+        <li>Structuring outputs for downstream analysis</li>
+        <li>Improving operational productivity and data consistency</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🔧 Key Workflow Categories</h3>
+      
+      <h4 style="font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px;">1. Job & Skills Platform Data Collection</h4>
+      <ul>
+        <li>Automated data extraction from MyCareersFuture and MySkillsFuture</li>
+        <li>Consistent collection of large volumes of information from directory-style sources</li>
+        <li>Standardised output formatting for immediate use</li>
+      </ul>
+
+      <h4 style="font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px;">2. Tender Opportunity Searches</h4>
+      <ul>
+        <li>Automated searches across GeBIZ, TenderBoard, and SESAMi platforms</li>
+        <li>Compilation of relevant tender opportunities</li>
+        <li>Structured outputs for analysis and prioritisation</li>
+      </ul>
+
+      <h4 style="font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px;">3. Lead Enrichment & Data Quality</h4>
+      <ul>
+        <li>Automated updates to centralised lead lists</li>
+        <li>Filling missing email addresses and contact information where available</li>
+        <li>Improving field consistency across datasets</li>
+        <li>Making datasets more complete and outreach-ready</li>
+      </ul>
+
+      <h4 style="font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px;">4. Competitor Benchmarking</h4>
+      <ul>
+        <li>Retrieving competitor course pricing and related indicators</li>
+        <li>Supporting faster comparisons without manual checks</li>
+        <li>Structured data for competitive analysis</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>🛠️ Technical Challenges & Solutions</h3>
+      <p>I designed workflows to handle real-world variability and edge cases:</p>
+      <ul>
+        <li><strong>Inconsistent Layouts:</strong> Built robust workflows that adapt to different page structures</li>
+        <li><strong>Page Load Delays:</strong> Implemented wait conditions and retry logic to handle timing variations</li>
+        <li><strong>Missing Fields:</strong> Added validation and error handling for incomplete data</li>
+        <li><strong>Duplicate Entries:</strong> Implemented deduplication logic to ensure data quality</li>
+        <li><strong>Structured Outputs:</strong> Designed workflows to produce consistent, analysis-ready formats</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h3>💼 Business Impact</h3>
+      <p>These automation workflows significantly reduced manual effort for repetitive data collection tasks, enabling the team to focus on analysis and strategic work. The structured outputs improved data consistency and quality, making datasets more reliable and actionable for business decisions.</p>
+    </div>
+
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <!-- External JS -->
+  <script src="js/script.js"></script>
+  <script>
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+</body>
+</html>
+
