@@ -1,5 +1,17 @@
+/* ============================================================================
+   PORTFOLIO WEBSITE - MAIN JAVASCRIPT
+   ============================================================================ */
+
+// ============================================================================
 // CAROUSEL FUNCTIONALITY
+// ============================================================================
+
+/**
+ * Initializes an infinite loop carousel with smooth transitions
+ * @param {HTMLElement} carouselElement - The carousel container element
+ */
 function initCarousel(carouselElement) {
+  // Get carousel elements
   const track = carouselElement.querySelector('.carousel-track');
   const slides = carouselElement.querySelectorAll('.carousel-slide');
   const prevBtn = carouselElement.querySelector('.carousel-btn-prev');
@@ -7,23 +19,25 @@ function initCarousel(carouselElement) {
   const dotsContainer = carouselElement.parentElement.querySelector('.carousel-dots');
   const isClickable = carouselElement.classList.contains('carousel-clickable');
   
+  // Carousel state
   const totalSlides = slides.length;
-  let currentIndex = 1; // Start at 1 because we'll add clones
+  let currentIndex = 1; // Will be adjusted after cloning
   let autoScrollInterval = null;
   let isTransitioning = false;
 
-  // Clone slides for seamless loop - add multiple clones for smoother transitions
+  // Clone slides for seamless infinite loop
+  // We add 2 clones at each end for smoother transitions
   const firstClone = slides[0].cloneNode(true);
   const secondClone = slides[0].cloneNode(true);
   const lastClone = slides[totalSlides - 1].cloneNode(true);
   const secondLastClone = slides[totalSlides - 1].cloneNode(true);
   
-  firstClone.classList.add('clone');
-  secondClone.classList.add('clone');
-  lastClone.classList.add('clone');
-  secondLastClone.classList.add('clone');
+  // Mark clones for identification
+  [firstClone, secondClone, lastClone, secondLastClone].forEach(clone => {
+    clone.classList.add('clone');
+  });
   
-  // Add clones: [secondLast, last, ...real slides..., first, second]
+  // Insert clones: [secondLast, last, ...real slides..., first, second]
   track.insertBefore(secondLastClone, slides[0]);
   track.insertBefore(lastClone, slides[0]);
   track.appendChild(firstClone);
@@ -32,7 +46,7 @@ function initCarousel(carouselElement) {
   // Get all slides including clones
   const allSlides = track.querySelectorAll('.carousel-slide');
 
-  // Create dots (only for real slides, not clones)
+  // Create navigation dots (only for real slides)
   for (let i = 0; i < totalSlides; i++) {
     const dot = document.createElement('button');
     dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
@@ -41,35 +55,37 @@ function initCarousel(carouselElement) {
     dotsContainer.appendChild(dot);
   }
   
-  // Get dots for state management
   const dots = dotsContainer.querySelectorAll('.carousel-dot');
 
+  /**
+   * Updates carousel position and visual state
+   * @param {boolean} instant - If true, update without transition
+   */
   function updateCarousel(instant = false) {
-    // Get container width for accurate calculation
     const container = track.parentElement;
     const containerWidth = container.offsetWidth || container.clientWidth;
     
-    // Each slide is 70% of container width, plus 20px gap
-    const slideWidth = (containerWidth * 0.7);
+    // Calculate slide dimensions (70% of container width with 20px gap)
+    const slideWidth = containerWidth * 0.7;
     const gap = 20;
     const totalSlideWidth = slideWidth + gap;
     
-    // Calculate position: move by (currentIndex * totalSlideWidth) then center
+    // Calculate position: move by currentIndex, then center the slide
     const centerOffset = (containerWidth - slideWidth) / 2;
     const moveDistance = (currentIndex * totalSlideWidth) - centerOffset;
     
     if (instant) {
-      // Disable transition for instant update
+      // Instant update (no animation) - used for seamless loop jumps
       track.style.transition = 'none';
       track.style.transform = `translateX(-${moveDistance}px) translateZ(0)`;
-      // Force reflow to ensure instant update is applied
-      void track.offsetHeight;
+      void track.offsetHeight; // Force reflow
     } else {
+      // Smooth transition
       track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
       track.style.transform = `translateX(-${moveDistance}px) translateZ(0)`;
     }
     
-    // Update active classes for slides
+    // Update slide classes (active, prev, next)
     allSlides.forEach((slide, index) => {
       slide.classList.remove('active', 'prev', 'next');
       if (index === currentIndex) {
@@ -81,27 +97,23 @@ function initCarousel(carouselElement) {
       }
     });
     
-    // Update dots based on real slide index
+    // Update navigation dots based on real slide index
     const realIndex = getRealIndex();
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === realIndex);
     });
   }
   
-  // Adjust initial position (we start at index 2, which is the first real slide after 2 clones)
-  currentIndex = 2;
-  
-  // Initialize carousel state after everything is set up
-  // Wait for next frame to ensure layout is calculated
-  requestAnimationFrame(() => {
-    updateCarousel(true);
-  });
-
+  /**
+   * Converts currentIndex (which includes clones) to real slide index
+   * @returns {number} The real slide index (0 to totalSlides-1)
+   */
   function getRealIndex() {
-    // Account for 2 clones at the beginning (secondLast and last)
+    // Structure: [clone, clone, real, real, ..., real, clone, clone]
     // Index 0,1 = clones (secondLast, last)
     // Index 2 to totalSlides+1 = real slides
     // Index totalSlides+2, totalSlides+3 = clones (first, second)
+    
     if (currentIndex <= 1) {
       // At cloned last slides at the beginning
       return totalSlides - (2 - currentIndex);
@@ -114,6 +126,10 @@ function initCarousel(carouselElement) {
     return currentIndex - 2;
   }
 
+  /**
+   * Navigate to a specific slide by index
+   * @param {number} index - The real slide index (0 to totalSlides-1)
+   */
   function goToSlide(index) {
     if (isTransitioning) return;
     currentIndex = index + 2; // +2 because of 2 cloned slides at the beginning
@@ -121,21 +137,23 @@ function initCarousel(carouselElement) {
     resetAutoScroll();
   }
 
+  /**
+   * Move to the next slide
+   */
   function nextSlide() {
     if (isTransitioning) return;
     isTransitioning = true;
     currentIndex++;
     updateCarousel();
     
-    // Handle seamless loop transition
+    // Handle seamless loop: when reaching end clones, jump to beginning
     const handleTransitionEnd = () => {
       track.removeEventListener('transitionend', handleTransitionEnd);
       
       // If we're at the cloned first slides, instantly jump to real first slide
-      // Use requestAnimationFrame to ensure smooth jump during browser paint cycle
       if (currentIndex >= allSlides.length - 2) {
         requestAnimationFrame(() => {
-          currentIndex = 2; // Jump to first real slide (after 2 clones at start)
+          currentIndex = 2; // Jump to first real slide
           updateCarousel(true);
           isTransitioning = false;
         });
@@ -148,21 +166,23 @@ function initCarousel(carouselElement) {
     resetAutoScroll();
   }
 
+  /**
+   * Move to the previous slide
+   */
   function prevSlide() {
     if (isTransitioning) return;
     isTransitioning = true;
     currentIndex--;
     updateCarousel();
     
-    // Handle seamless loop transition
+    // Handle seamless loop: when reaching beginning clones, jump to end
     const handleTransitionEnd = () => {
       track.removeEventListener('transitionend', handleTransitionEnd);
       
       // If we're at the cloned last slides, instantly jump to real last slide
-      // Use requestAnimationFrame to ensure smooth jump during browser paint cycle
       if (currentIndex <= 1) {
         requestAnimationFrame(() => {
-          currentIndex = totalSlides + 1; // Jump to last real slide (after 2 clones at start)
+          currentIndex = totalSlides + 1; // Jump to last real slide
           updateCarousel(true);
           isTransitioning = false;
         });
@@ -175,6 +195,7 @@ function initCarousel(carouselElement) {
     resetAutoScroll();
   }
 
+  // Auto-scroll functionality
   function startAutoScroll() {
     autoScrollInterval = setInterval(() => {
       nextSlide();
@@ -193,24 +214,30 @@ function initCarousel(carouselElement) {
     startAutoScroll();
   }
 
-  // Event listeners
+  // ========================================================================
+  // EVENT LISTENERS
+  // ========================================================================
+
+  // Navigation buttons
   nextBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     nextSlide();
   });
+  
   prevBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     prevSlide();
   });
 
-  // Clickable projects - open modal (only for real slides, not clones)
+  // Clickable slides (for project carousel)
   if (isClickable) {
     slides.forEach((slide, index) => {
       slide.addEventListener('click', () => {
         openProjectModal(index, slide);
       });
     });
-    // Also add click handlers to clones
+    
+    // Also handle clicks on cloned slides
     const clones = track.querySelectorAll('.clone');
     clones.forEach((clone, cloneIndex) => {
       clone.addEventListener('click', () => {
@@ -220,14 +247,14 @@ function initCarousel(carouselElement) {
     });
   }
 
-  // Auto-scroll every 3 seconds
+  // Auto-scroll on load
   startAutoScroll();
 
-  // Pause on hover
+  // Pause auto-scroll on hover
   carouselElement.addEventListener('mouseenter', stopAutoScroll);
   carouselElement.addEventListener('mouseleave', startAutoScroll);
   
-  // Recalculate on window resize
+  // Recalculate position on window resize
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
@@ -242,35 +269,51 @@ function initCarousel(carouselElement) {
     if (e.key === 'ArrowRight') nextSlide();
   });
 
-  // Touch/swipe support for mobile
-  let startX = 0;
-  let currentX = 0;
+  // Touch/swipe support for mobile devices
+  let touchStartX = 0;
+  let touchCurrentX = 0;
   let isDragging = false;
 
   carouselElement.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
+    touchStartX = e.touches[0].clientX;
     isDragging = true;
     stopAutoScroll();
   });
 
   carouselElement.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
-    currentX = e.touches[0].clientX;
+    touchCurrentX = e.touches[0].clientX;
   });
 
   carouselElement.addEventListener('touchend', () => {
     if (!isDragging) return;
     isDragging = false;
-    const diff = startX - currentX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) nextSlide();
-      else prevSlide();
+    
+    const swipeDistance = touchStartX - touchCurrentX;
+    const swipeThreshold = 50; // Minimum distance for swipe
+    
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+      if (swipeDistance > 0) {
+        nextSlide(); // Swipe left = next
+      } else {
+        prevSlide(); // Swipe right = previous
+      }
     }
     startAutoScroll();
   });
+
+  // Initialize carousel position
+  currentIndex = 2; // Start at first real slide (after 2 clones)
+  requestAnimationFrame(() => {
+    updateCarousel(true);
+  });
 }
 
+// ============================================================================
 // PROJECT MODAL FUNCTIONALITY
+// ============================================================================
+
+// Project data for modal display (currently placeholder data)
 const projectData = [
   {
     title: "Project Title 1",
@@ -292,6 +335,11 @@ const projectData = [
   }
 ];
 
+/**
+ * Opens the project modal with project details
+ * @param {number} index - The project index
+ * @param {HTMLElement} slideElement - The slide element that was clicked
+ */
 function openProjectModal(index, slideElement) {
   const modal = document.getElementById('projectModal');
   const modalImage = document.getElementById('modalImage');
@@ -299,6 +347,7 @@ function openProjectModal(index, slideElement) {
   const modalDescription = document.getElementById('modalDescription');
   const modalTags = document.getElementById('modalTags');
 
+  // Get project data or use fallback
   const project = projectData[index] || {
     title: `Project ${index + 1}`,
     description: "Project details coming soon.",
@@ -306,12 +355,13 @@ function openProjectModal(index, slideElement) {
     tags: []
   };
 
+  // Update modal content
   modalImage.src = project.image;
   modalImage.alt = project.title;
   modalTitle.textContent = project.title;
   modalDescription.textContent = project.description;
   
-  // Clear and add tags
+  // Clear and populate tags
   modalTags.innerHTML = '';
   project.tags.forEach(tag => {
     const tagElement = document.createElement('div');
@@ -320,17 +370,25 @@ function openProjectModal(index, slideElement) {
     modalTags.appendChild(tagElement);
   });
 
+  // Show modal
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
+/**
+ * Closes the project modal
+ */
 function closeProjectModal() {
   const modal = document.getElementById('projectModal');
   modal.classList.remove('active');
   document.body.style.overflow = '';
 }
 
+// ============================================================================
 // CONTENT MODAL FUNCTIONALITY
+// ============================================================================
+
+// Content data for About and Extracurriculars modals
 const contentData = {
   'about-intro': {
     title: 'Introduction',
@@ -469,6 +527,10 @@ const contentData = {
   }
 };
 
+/**
+ * Opens the content modal with specified content
+ * @param {string} modalId - The ID of the content to display
+ */
 function openContentModal(modalId) {
   const modal = document.getElementById('contentModal');
   const modalTitle = document.getElementById('contentModalTitle');
@@ -484,28 +546,41 @@ function openContentModal(modalId) {
   document.body.style.overflow = 'hidden';
 }
 
+/**
+ * Closes the content modal
+ */
 function closeContentModal() {
   const modal = document.getElementById('contentModal');
   modal.classList.remove('active');
   document.body.style.overflow = '';
 }
 
+// ============================================================================
 // SECTION INDICATOR FUNCTIONALITY
+// ============================================================================
+
+/**
+ * Initializes the section progress indicator that highlights the current section
+ */
 function initSectionIndicator() {
   const sections = document.querySelectorAll('section[id], footer[id]');
   const indicators = document.querySelectorAll('.section-indicator-dot');
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
   
+  /**
+   * Updates which section indicator is active based on scroll position
+   */
   function updateIndicator() {
-    const scrollPos = window.scrollY + 200; // Offset for better detection
+    const scrollPosition = window.scrollY + 200; // Offset for better detection
     let currentSectionId = null;
     
-    sections.forEach((section, index) => {
+    // Find which section is currently in view
+    sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
       const sectionId = section.getAttribute('id');
       
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         currentSectionId = sectionId;
         
         // Update section indicator dots
@@ -516,7 +591,7 @@ function initSectionIndicator() {
           }
         });
         
-        // Update nav links (exclude nav-btn)
+        // Update navigation links (exclude nav-btn)
         navLinks.forEach(link => {
           if (link.classList.contains('nav-btn')) return;
           const href = link.getAttribute('href');
@@ -539,8 +614,6 @@ function initSectionIndicator() {
     // Update URL hash to reflect current section (without triggering scroll)
     const newHash = currentSectionId ? `#${currentSectionId}` : '';
     if (window.location.hash !== newHash) {
-      // Use replaceState to update URL without adding to history or triggering scroll
-      // If newHash is empty, remove hash by using pathname + search
       const newUrl = newHash 
         ? newHash 
         : window.location.pathname + window.location.search;
@@ -548,15 +621,15 @@ function initSectionIndicator() {
     }
   }
   
-  // Update on scroll
-  let ticking = false;
+  // Throttle scroll events for better performance
+  let isThrottled = false;
   window.addEventListener('scroll', () => {
-    if (!ticking) {
+    if (!isThrottled) {
       window.requestAnimationFrame(() => {
         updateIndicator();
-        ticking = false;
+        isThrottled = false;
       });
-      ticking = true;
+      isThrottled = true;
     }
   });
   
@@ -581,7 +654,13 @@ function initSectionIndicator() {
   });
 }
 
+// ============================================================================
 // PAGE LOADER
+// ============================================================================
+
+/**
+ * Hides the page loader with fade-out animation
+ */
 function hideLoader() {
   const loader = document.getElementById('pageLoader');
   if (loader) {
@@ -592,14 +671,19 @@ function hideLoader() {
   }
 }
 
-// Keep browser scroll restoration but prevent unwanted scrolling on refresh
-// Handle scroll prevention immediately to catch it before restoration happens
-(function() {
+// ============================================================================
+// SCROLL RESTORATION HANDLING
+// ============================================================================
+
+/**
+ * Prevents unwanted scroll restoration on page refresh
+ * Ensures page always starts at top unless there's a hash in the URL
+ */
+(function handleScrollRestoration() {
   const hash = window.location.hash;
   
   if (!hash) {
     // No hash: prevent unwanted scroll restoration on refresh
-    // Temporarily disable scroll restoration to prevent unwanted scroll on refresh
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
@@ -610,6 +694,7 @@ function hideLoader() {
     // Keep checking and correcting scroll position until page is fully loaded
     let checkCount = 0;
     const maxChecks = 20;
+    
     const checkScroll = () => {
       if (window.scrollY > 0 && checkCount < maxChecks) {
         window.scrollTo(0, 0);
@@ -618,49 +703,42 @@ function hideLoader() {
       }
     };
     
-    // Start checking immediately
     requestAnimationFrame(checkScroll);
     
     // Also check on DOMContentLoaded
     document.addEventListener('DOMContentLoaded', () => {
       if (window.scrollY > 0) {
         window.scrollTo(0, 0);
-        // Restart checking
         checkCount = 0;
         requestAnimationFrame(checkScroll);
       }
     }, { once: true });
     
-    // Re-enable scroll restoration after page fully loads (for future navigations)
+    // Re-enable scroll restoration after page fully loads
     window.addEventListener('load', () => {
-      // Final scroll to top
       window.scrollTo(0, 0);
       
-      // One more check after a short delay
       setTimeout(() => {
         if (window.scrollY > 0) {
           window.scrollTo(0, 0);
         }
         
-        // Re-enable scroll restoration for normal navigation
         if ('scrollRestoration' in history) {
           history.scrollRestoration = 'auto';
         }
       }, 100);
     }, { once: true });
   } else {
-    // Has hash: ensure we scroll to the hash section, overriding any scroll restoration
-    // This ensures that when you refresh at /#internship, you stay at that section
+    // Has hash: ensure we scroll to the hash section
     window.addEventListener('load', () => {
       const targetElement = document.querySelector(hash);
       if (targetElement) {
-        // Wait for any scroll restoration to complete, then scroll to hash section
         setTimeout(() => {
           const offset = 100;
           const targetPosition = targetElement.offsetTop - offset;
           window.scrollTo({
             top: targetPosition,
-            behavior: 'auto' // Use 'auto' instead of 'smooth' for immediate scroll
+            behavior: 'auto' // Immediate scroll (not smooth)
           });
         }, 100);
       }
@@ -668,13 +746,16 @@ function hideLoader() {
   }
 })();
 
-// Initialize all carousels
+// ============================================================================
+// INITIALIZATION
+// ============================================================================
+
+/**
+ * Initialize all functionality when DOM is ready
+ */
 document.addEventListener('DOMContentLoaded', () => {
-  // Additional safeguard: if no hash and we're scrolled down, go to top
-  // This catches any scroll restoration that might happen after our initial prevention
-  // Only do this if there's no hash (hash navigation should work normally)
+  // Additional safeguard: prevent scroll restoration if no hash
   if (!window.location.hash) {
-    // Use multiple requestAnimationFrame calls to catch late scroll restoration
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         if (window.scrollY > 0) {
@@ -689,9 +770,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(hideLoader, 300);
   });
 
-  // Fallback: hide loader after a maximum time
+  // Fallback: hide loader after maximum time
   setTimeout(hideLoader, 2000);
 
+  // Initialize all carousels
   const carousels = document.querySelectorAll('.carousel');
   carousels.forEach(carousel => {
     initCarousel(carousel);
@@ -700,35 +782,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize section indicator
   initSectionIndicator();
 
-  // Modal close functionality
-  const modalClose = document.querySelector('.project-modal-close');
-  const modal = document.getElementById('projectModal');
+  // ========================================================================
+  // PROJECT MODAL EVENT LISTENERS
+  // ========================================================================
   
-  if (modalClose) {
-    modalClose.addEventListener('click', closeProjectModal);
+  const projectModal = document.getElementById('projectModal');
+  const projectModalClose = document.querySelector('.project-modal-close');
+  
+  if (projectModalClose) {
+    projectModalClose.addEventListener('click', closeProjectModal);
   }
 
-  // Close modal when clicking outside
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
+  if (projectModal) {
+    // Close modal when clicking outside
+    projectModal.addEventListener('click', (e) => {
+      if (e.target === projectModal) {
         closeProjectModal();
       }
     });
 
     // Close modal with Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
+      if (e.key === 'Escape' && projectModal.classList.contains('active')) {
         closeProjectModal();
       }
     });
   }
 
-  // Content modal functionality
+  // ========================================================================
+  // CONTENT MODAL EVENT LISTENERS
+  // ========================================================================
+  
   const contentModal = document.getElementById('contentModal');
   const contentModalClose = document.querySelector('.content-modal-close');
   
-  // Clickable cards
+  // Clickable cards - open content modal
   const clickableCards = document.querySelectorAll('.clickable-card');
   clickableCards.forEach(card => {
     card.addEventListener('click', () => {
@@ -743,15 +831,15 @@ document.addEventListener('DOMContentLoaded', () => {
     contentModalClose.addEventListener('click', closeContentModal);
   }
 
-  // Close content modal when clicking outside
   if (contentModal) {
+    // Close modal when clicking outside
     contentModal.addEventListener('click', (e) => {
       if (e.target === contentModal) {
         closeContentModal();
       }
     });
 
-    // Close content modal with Escape key
+    // Close modal with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && contentModal.classList.contains('active')) {
         closeContentModal();
